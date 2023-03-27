@@ -167,7 +167,7 @@ ticks_on_borders = true
 margin_top = 184.0
 margin_right = 110.0
 margin_bottom = 215.0
-text = "Right to left
+text = "Right to Left
 Navigation"
 
 [node name="OtherGrid" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
