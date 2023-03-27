@@ -28,7 +28,7 @@ script = ExtResource( 1 )
 visible = false
 margin_right = 224.0
 margin_bottom = 48.0
-text = "No mangas found!
+text = "No manga found!
 
 Check the 'Manga Location' setting!"
 
