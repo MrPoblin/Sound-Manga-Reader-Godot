@@ -1,0 +1,499 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/UI/SettingGrid.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/UI/SelectLocation.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/UI/C_Panel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/UI/SettingReset.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/UI/ColorGrid.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/UI/SettingDiscard.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/UI/op_scheme.gd" type="Script" id=9]
+
+[node name="Settings" type="Control"]
+anchor_top = 0.05
+anchor_right = 0.6
+anchor_bottom = 0.95
+
+[node name="C_Panel" parent="." instance=ExtResource( 5 )]
+
+[node name="set" type="Control" parent="."]
+anchor_left = 0.03
+anchor_top = 0.02
+anchor_right = 1.0
+anchor_bottom = 0.99
+
+[node name="SettingScroll" type="ScrollContainer" parent="set"]
+anchor_right = 0.98
+anchor_bottom = 1.0
+
+[node name="SettingGrid" type="GridContainer" parent="set/SettingScroll"]
+margin_right = 730.061
+margin_bottom = 406.0
+size_flags_horizontal = 3
+custom_constants/vseparation = 4
+custom_constants/hseparation = 20
+columns = 2
+script = ExtResource( 2 )
+
+[node name="l_storage_manga" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 5.0
+margin_right = 110.0
+margin_bottom = 19.0
+text = "Manga Location"
+
+[node name="le_storage_manga" type="LineEdit" parent="set/SettingScroll/SettingGrid"]
+unique_name_in_owner = true
+margin_left = 130.0
+margin_right = 730.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="l_storage_music" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 33.0
+margin_right = 110.0
+margin_bottom = 47.0
+text = "Music Location"
+
+[node name="le_storage_music" type="LineEdit" parent="set/SettingScroll/SettingGrid"]
+unique_name_in_owner = true
+margin_left = 130.0
+margin_top = 28.0
+margin_right = 730.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+
+[node name="l_isSame" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 69.0
+margin_right = 110.0
+margin_bottom = 83.0
+text = "Same Location"
+
+[node name="LocationGrid" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
+margin_left = 130.0
+margin_top = 56.0
+margin_right = 730.0
+margin_bottom = 96.0
+columns = 4
+
+[node name="c_same" type="CheckButton" parent="set/SettingScroll/SettingGrid/LocationGrid"]
+margin_right = 76.0
+margin_bottom = 40.0
+mouse_default_cursor_shape = 2
+
+[node name="sep" type="VSeparator" parent="set/SettingScroll/SettingGrid/LocationGrid"]
+margin_left = 80.0
+margin_right = 84.0
+margin_bottom = 40.0
+size_flags_horizontal = 2
+
+[node name="man_but_sel" type="Button" parent="set/SettingScroll/SettingGrid/LocationGrid"]
+margin_left = 291.0
+margin_right = 445.0
+margin_bottom = 40.0
+mouse_default_cursor_shape = 2
+text = "Select Manga Location"
+
+[node name="mus_but_sel" type="Button" parent="set/SettingScroll/SettingGrid/LocationGrid"]
+margin_left = 449.0
+margin_right = 600.0
+margin_bottom = 40.0
+mouse_default_cursor_shape = 2
+text = "Select Music Location"
+
+[node name="l_AudioMaster" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 101.0
+margin_right = 110.0
+margin_bottom = 115.0
+text = "Master Volume"
+
+[node name="s_master" type="HSlider" parent="set/SettingScroll/SettingGrid"]
+margin_left = 130.0
+margin_top = 100.0
+margin_right = 730.0
+margin_bottom = 116.0
+mouse_default_cursor_shape = 10
+max_value = 1.0
+step = 0.005
+ticks_on_borders = true
+
+[node name="l_AudioMusic" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 121.0
+margin_right = 110.0
+margin_bottom = 135.0
+text = "Music Volume"
+
+[node name="s_music" type="HSlider" parent="set/SettingScroll/SettingGrid"]
+margin_left = 130.0
+margin_top = 120.0
+margin_right = 730.0
+margin_bottom = 136.0
+mouse_default_cursor_shape = 10
+max_value = 1.0
+step = 0.005
+ticks_on_borders = true
+
+[node name="l_AudioSfx" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 141.0
+margin_right = 110.0
+margin_bottom = 155.0
+text = "SFX Volume"
+
+[node name="s_sfx" type="HSlider" parent="set/SettingScroll/SettingGrid"]
+margin_left = 130.0
+margin_top = 140.0
+margin_right = 730.0
+margin_bottom = 156.0
+mouse_default_cursor_shape = 10
+max_value = 1.0
+step = 0.005
+ticks_on_borders = true
+
+[node name="l_AudioVoice" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 161.0
+margin_right = 110.0
+margin_bottom = 175.0
+text = "Voice Volume"
+
+[node name="s_voice" type="HSlider" parent="set/SettingScroll/SettingGrid"]
+margin_left = 130.0
+margin_top = 160.0
+margin_right = 730.0
+margin_bottom = 176.0
+mouse_default_cursor_shape = 10
+max_value = 1.0
+step = 0.005
+ticks_on_borders = true
+
+[node name="l_swap_lr" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 184.0
+margin_right = 110.0
+margin_bottom = 215.0
+text = "Right to left
+Navigation"
+
+[node name="OtherGrid" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
+margin_left = 130.0
+margin_top = 180.0
+margin_right = 730.0
+margin_bottom = 220.0
+columns = 7
+
+[node name="c_swap_lr" type="CheckButton" parent="set/SettingScroll/SettingGrid/OtherGrid"]
+margin_right = 76.0
+margin_bottom = 40.0
+mouse_default_cursor_shape = 2
+
+[node name="sep2" type="VSeparator" parent="set/SettingScroll/SettingGrid/OtherGrid"]
+margin_left = 80.0
+margin_right = 84.0
+margin_bottom = 40.0
+size_flags_horizontal = 0
+
+[node name="l_auto_res" type="Label" parent="set/SettingScroll/SettingGrid/OtherGrid"]
+margin_left = 88.0
+margin_top = 4.0
+margin_right = 188.0
+margin_bottom = 35.0
+text = "Resize Manga
+on Page Change"
+
+[node name="c_auto_res" type="CheckButton" parent="set/SettingScroll/SettingGrid/OtherGrid"]
+margin_left = 192.0
+margin_right = 268.0
+margin_bottom = 40.0
+mouse_default_cursor_shape = 2
+
+[node name="sep3" type="VSeparator" parent="set/SettingScroll/SettingGrid/OtherGrid"]
+margin_left = 272.0
+margin_right = 276.0
+margin_bottom = 40.0
+size_flags_horizontal = 0
+
+[node name="l_use_mipmaps" type="Label" parent="set/SettingScroll/SettingGrid/OtherGrid"]
+margin_left = 280.0
+margin_top = 13.0
+margin_right = 368.0
+margin_bottom = 27.0
+text = "Use Mipmaps"
+
+[node name="c_use_mipmaps" type="CheckButton" parent="set/SettingScroll/SettingGrid/OtherGrid"]
+margin_left = 372.0
+margin_right = 448.0
+margin_bottom = 40.0
+mouse_default_cursor_shape = 2
+
+[node name="SelectLocation" type="FileDialog" parent="set/SettingScroll/SettingGrid"]
+margin_top = 216.0
+margin_right = 357.0
+margin_bottom = 346.0
+rect_min_size = Vector2( 320, 270 )
+window_title = "Open a Directory"
+resizable = true
+mode = 2
+access = 2
+script = ExtResource( 4 )
+
+[node name="l_color_main" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 224.0
+margin_right = 110.0
+margin_bottom = 272.0
+text = "Main Menu Color
+
+"
+
+[node name="ColorGrid" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
+margin_left = 130.0
+margin_top = 224.0
+margin_right = 730.0
+margin_bottom = 272.0
+columns = 7
+script = ExtResource( 7 )
+
+[node name="cp_main" type="ColorPickerButton" parent="set/SettingScroll/SettingGrid/ColorGrid"]
+margin_right = 83.0
+margin_bottom = 20.0
+mouse_default_cursor_shape = 2
+text = "poblin"
+
+[node name="sep3" type="VSeparator" parent="set/SettingScroll/SettingGrid/ColorGrid"]
+margin_left = 87.0
+margin_right = 91.0
+margin_bottom = 20.0
+
+[node name="l_color_panel" type="Label" parent="set/SettingScroll/SettingGrid/ColorGrid"]
+margin_left = 95.0
+margin_top = 3.0
+margin_right = 206.0
+margin_bottom = 17.0
+text = " Side Panel Color "
+
+[node name="cp_panel" type="ColorPickerButton" parent="set/SettingScroll/SettingGrid/ColorGrid"]
+margin_left = 210.0
+margin_right = 293.0
+margin_bottom = 20.0
+mouse_default_cursor_shape = 2
+text = "poblin"
+
+[node name="sep4" type="VSeparator" parent="set/SettingScroll/SettingGrid/ColorGrid"]
+margin_left = 297.0
+margin_right = 301.0
+margin_bottom = 20.0
+
+[node name="l_color_bg" type="Label" parent="set/SettingScroll/SettingGrid/ColorGrid"]
+margin_left = 305.0
+margin_top = 3.0
+margin_right = 465.0
+margin_bottom = 17.0
+text = "Manga Background Color "
+
+[node name="cp_bg" type="ColorPickerButton" parent="set/SettingScroll/SettingGrid/ColorGrid"]
+margin_left = 469.0
+margin_right = 552.0
+margin_bottom = 20.0
+mouse_default_cursor_shape = 2
+text = "poblin"
+
+[node name="b_ran_main" type="Button" parent="set/SettingScroll/SettingGrid/ColorGrid"]
+margin_top = 24.0
+margin_right = 83.0
+margin_bottom = 44.0
+mouse_default_cursor_shape = 2
+text = "Randomize"
+
+[node name="space" type="Control" parent="set/SettingScroll/SettingGrid/ColorGrid"]
+margin_left = 87.0
+margin_top = 24.0
+margin_right = 91.0
+margin_bottom = 44.0
+
+[node name="space2" type="Control" parent="set/SettingScroll/SettingGrid/ColorGrid"]
+margin_left = 95.0
+margin_top = 24.0
+margin_right = 206.0
+margin_bottom = 44.0
+
+[node name="b_ran_panel" type="Button" parent="set/SettingScroll/SettingGrid/ColorGrid"]
+margin_left = 210.0
+margin_top = 24.0
+margin_right = 293.0
+margin_bottom = 44.0
+mouse_default_cursor_shape = 2
+text = "Randomize"
+
+[node name="space3" type="Control" parent="set/SettingScroll/SettingGrid/ColorGrid"]
+margin_left = 297.0
+margin_top = 24.0
+margin_right = 301.0
+margin_bottom = 44.0
+
+[node name="space4" type="Control" parent="set/SettingScroll/SettingGrid/ColorGrid"]
+margin_left = 305.0
+margin_top = 24.0
+margin_right = 465.0
+margin_bottom = 44.0
+
+[node name="b_ran_bg" type="Button" parent="set/SettingScroll/SettingGrid/ColorGrid"]
+margin_left = 469.0
+margin_top = 24.0
+margin_right = 552.0
+margin_bottom = 44.0
+mouse_default_cursor_shape = 2
+text = "Randomize"
+
+[node name="l_color_bind" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 280.0
+margin_right = 110.0
+margin_bottom = 311.0
+text = "Bind Main and
+Side Panel Colors"
+
+[node name="OtherGrid3" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
+margin_left = 130.0
+margin_top = 276.0
+margin_right = 730.0
+margin_bottom = 316.0
+columns = 4
+
+[node name="c_bind_col" type="CheckButton" parent="set/SettingScroll/SettingGrid/OtherGrid3"]
+margin_right = 76.0
+margin_bottom = 40.0
+mouse_default_cursor_shape = 2
+
+[node name="sep5" type="VSeparator" parent="set/SettingScroll/SettingGrid/OtherGrid3"]
+margin_left = 80.0
+margin_right = 84.0
+margin_bottom = 40.0
+
+[node name="l_mute_on_pause" type="Label" parent="set/SettingScroll/SettingGrid/OtherGrid3"]
+margin_left = 88.0
+margin_top = 4.0
+margin_right = 162.0
+margin_bottom = 35.0
+text = "Mute Audio
+on Pause"
+
+[node name="c_mute_on_pause" type="CheckButton" parent="set/SettingScroll/SettingGrid/OtherGrid3"]
+margin_left = 166.0
+margin_right = 242.0
+margin_bottom = 40.0
+mouse_default_cursor_shape = 2
+
+[node name="l_zoom" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 321.0
+margin_right = 110.0
+margin_bottom = 335.0
+text = "Zoom Step"
+
+[node name="s_zoom" type="HSlider" parent="set/SettingScroll/SettingGrid"]
+margin_left = 130.0
+margin_top = 320.0
+margin_right = 730.0
+margin_bottom = 336.0
+min_value = 1.0
+max_value = 2.0
+step = 0.005
+value = 1.0
+
+[node name="l_long_click" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 340.0
+margin_right = 110.0
+margin_bottom = 371.0
+text = "Click & Hold 
+Time to Pan"
+
+[node name="s_long_click" type="HSlider" parent="set/SettingScroll/SettingGrid"]
+margin_left = 130.0
+margin_top = 340.0
+margin_right = 730.0
+margin_bottom = 356.0
+min_value = 0.02
+max_value = 0.5
+step = 0.002
+value = 0.02
+
+[node name="l_scheme" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 375.0
+margin_right = 110.0
+margin_bottom = 406.0
+text = "Mouse Control
+Scheme"
+
+[node name="op_scheme" type="OptionButton" parent="set/SettingScroll/SettingGrid"]
+margin_left = 130.0
+margin_top = 375.0
+margin_right = 159.0
+margin_bottom = 406.0
+size_flags_horizontal = 0
+script = ExtResource( 9 )
+
+[node name="SettEndGrid" type="GridContainer" parent="set"]
+anchor_top = 0.895
+anchor_right = 0.98
+anchor_bottom = 0.985
+columns = 4
+
+[node name="SettingSave" type="Button" parent="set/SettEndGrid"]
+margin_right = 120.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 120, 0 )
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+text = "SAVE"
+
+[node name="SettingDiscard" type="Button" parent="set/SettEndGrid"]
+margin_left = 124.0
+margin_right = 193.0
+margin_bottom = 52.0
+mouse_default_cursor_shape = 2
+text = "DISCARD"
+script = ExtResource( 8 )
+
+[node name="DiscardConf" type="ConfirmationDialog" parent="set/SettEndGrid/SettingDiscard"]
+margin_right = 200.0
+margin_bottom = 70.0
+popup_exclusive = true
+window_title = "Discard Changes?"
+
+[node name="endSpace" type="Control" parent="set/SettEndGrid"]
+margin_left = 197.0
+margin_right = 646.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+
+[node name="\?" type="Button" parent="set/SettEndGrid"]
+visible = false
+margin_left = 712.0
+margin_right = 730.0
+margin_bottom = 26.0
+text = "?"
+
+[node name="SettingReset" type="Button" parent="set/SettEndGrid"]
+margin_left = 650.0
+margin_right = 730.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 80, 0 )
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+text = "RESET"
+script = ExtResource( 6 )
+
+[node name="ResetConf" type="ConfirmationDialog" parent="set/SettEndGrid/SettingReset"]
+margin_left = -673.04
+margin_top = -572.378
+margin_right = -473.04
+margin_bottom = -502.378
+popup_exclusive = true
+window_title = "Reset Settings?"
+
+[connection signal="toggled" from="set/SettingScroll/SettingGrid/LocationGrid/c_same" to="set/SettingScroll/SettingGrid" method="_on_c_same_toggled"]
+[connection signal="pressed" from="set/SettingScroll/SettingGrid/LocationGrid/man_but_sel" to="set/SettingScroll/SettingGrid/SelectLocation" method="_on_man_but_sel_pressed"]
+[connection signal="pressed" from="set/SettingScroll/SettingGrid/LocationGrid/mus_but_sel" to="set/SettingScroll/SettingGrid/SelectLocation" method="_on_mus_but_sel_pressed"]
+[connection signal="dir_selected" from="set/SettingScroll/SettingGrid/SelectLocation" to="set/SettingScroll/SettingGrid/SelectLocation" method="_on_SelectLocation_dir_selected"]
+[connection signal="pressed" from="set/SettingScroll/SettingGrid/ColorGrid/b_ran_main" to="set/SettingScroll/SettingGrid/ColorGrid" method="_on_b_ran_main_pressed"]
+[connection signal="pressed" from="set/SettingScroll/SettingGrid/ColorGrid/b_ran_panel" to="set/SettingScroll/SettingGrid/ColorGrid" method="_on_b_ran_panel_pressed"]
+[connection signal="pressed" from="set/SettingScroll/SettingGrid/ColorGrid/b_ran_bg" to="set/SettingScroll/SettingGrid/ColorGrid" method="_on_b_ran_bg_pressed"]
+[connection signal="toggled" from="set/SettingScroll/SettingGrid/OtherGrid3/c_bind_col" to="set/SettingScroll/SettingGrid/ColorGrid" method="_on_c_bind_col_toggled"]
+[connection signal="pressed" from="set/SettEndGrid/SettingSave" to="set/SettingScroll/SettingGrid" method="_on_SettingSave_pressed"]
+[connection signal="pressed" from="set/SettEndGrid/SettingDiscard" to="set/SettEndGrid/SettingDiscard" method="_on_SettingDiscard_pressed"]
+[connection signal="confirmed" from="set/SettEndGrid/SettingDiscard/DiscardConf" to="set/SettEndGrid/SettingDiscard" method="_on_DiscardConf_confirmed"]
+[connection signal="pressed" from="set/SettEndGrid/SettingReset" to="set/SettEndGrid/SettingReset" method="_on_SettingReset_pressed"]
+[connection signal="confirmed" from="set/SettEndGrid/SettingReset/ResetConf" to="set/SettEndGrid/SettingReset" method="_on_ResetConf_confirmed"]

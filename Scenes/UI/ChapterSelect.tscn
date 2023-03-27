@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/UI/ChapterList.gd" type="Script" id=1]
+[ext_resource path="res://Assets/arrowLeft.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/UI/BackButton.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/UI/C_Panel.tscn" type="PackedScene" id=4]
+
+[node name="ChapterSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="C_Panel" parent="." instance=ExtResource( 4 )]
+
+[node name="ChapterContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.055
+anchor_top = 0.022
+anchor_right = 1.0
+anchor_bottom = 0.98
+margin_right = 12.0
+margin_bottom = 12.0001
+
+[node name="ChapterList" type="VBoxContainer" parent="ChapterContainer"]
+margin_bottom = 701.76
+size_flags_vertical = 3
+script = ExtResource( 1 )
+
+[node name="BackButton" type="Button" parent="."]
+anchor_left = 0.001
+anchor_top = 0.001
+anchor_right = 0.001
+anchor_bottom = 0.001
+rect_scale = Vector2( 0.5, 0.5 )
+icon = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[connection signal="visibility_changed" from="ChapterContainer/ChapterList" to="ChapterContainer/ChapterList" method="_on_ChapterList_visibility_changed"]
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_BackButton_pressed"]

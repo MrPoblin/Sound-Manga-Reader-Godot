@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/UI/TemplateButton.gd" type="Script" id=1]
+
+[node name="TemplateButton" type="Button"]
+visible = false
+margin_right = 70.0
+margin_bottom = 20.0
+mouse_default_cursor_shape = 2
+text = "template"
+align = 0
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="." to="." method="_on_TemplateButton_pressed"]

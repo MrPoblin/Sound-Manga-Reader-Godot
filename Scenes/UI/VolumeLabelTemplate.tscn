@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="VolumeLabelTemplate" type="Label"]
+anchor_right = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+text = "template"
