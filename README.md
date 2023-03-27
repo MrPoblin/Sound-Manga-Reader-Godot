@@ -10,7 +10,7 @@ OPUS Codec is not supported by the Godot Engine, so you'll have to use Vorbis in
 
 All of the Umineko manga packs should be supported (though the audio packs need to be transcoded to Ogg Vorbis)
 
-#Screenshots
+## Screenshots
 
 ![Manga List](https://raw.githubusercontent.com/MrPoblin/screenshots/main/Sound-Manga-Reader-Godot/smrg_1.png)
 ![Chapter List](https://raw.githubusercontent.com/MrPoblin/screenshots/main/Sound-Manga-Reader-Godot/smrg_2.png)
