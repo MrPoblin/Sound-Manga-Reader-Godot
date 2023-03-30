@@ -1,4 +1,4 @@
-# Sound-Manga-Reader-Godot
+# Sound Manga Reader Godot
 Offline manga reader for manga with sound enhancement features (made with Godot 3.5.2)
 
 Based on the [Sound Manga Reader](https://gitlab.com/papjul/sound-manga-reader/) project.
