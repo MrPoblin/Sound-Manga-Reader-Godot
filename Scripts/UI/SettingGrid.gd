@@ -59,7 +59,10 @@ func _on_SettingSave_pressed():
 	Config.config.set_value("color", "bind", $OtherGrid3/c_bind_col.pressed)
 	Config.config.set_value("color", "main", $ColorGrid/cp_main.color)
 	if($OtherGrid3/c_bind_col.pressed):
-		Config.config.set_value("color", "panel", $ColorGrid/cp_main.color.lightened(0.12))
+		if($ColorGrid/cp_main.color.get_luminance()>0.5):
+			Config.config.set_value("color", "panel", $ColorGrid/cp_main.color.darkened(($ColorGrid/cp_main.color.get_luminance()-0.5)*0.24))
+		else:
+			Config.config.set_value("color", "panel", $ColorGrid/cp_main.color.lightened($ColorGrid/cp_main.color.get_luminance()*0.24))
 	else:
 		Config.config.set_value("color", "panel", $ColorGrid/cp_panel.color)
 	Config.config.set_value("color", "bg", $ColorGrid/cp_bg.color)
