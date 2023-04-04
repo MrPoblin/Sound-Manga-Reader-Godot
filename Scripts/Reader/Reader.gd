@@ -13,7 +13,7 @@ onready var prevSfx
 onready var autoResize:bool = Config.config.get_value("controls", "auto_resize")
 onready var longClick:float = Config.config.get_value("controls", "long_click")
 onready var mouseScheme:int = Config.config.get_value("controls", "mouseScheme", 0)
-#var mousePos:Vector2
+var mousePos:Vector2
 var signal_received:bool = false
 var doPan:bool
 
@@ -153,14 +153,14 @@ func rightPage():
 func _on_Bg_gui_input(event):
 	if event is InputEventMouseButton:
 		if (event.button_index == BUTTON_LEFT) || (event.button_index == BUTTON_RIGHT && mouseScheme == 1):
-#			mousePos = get_local_mouse_position()
 			doPan = true
 			var mouse_timer = $Timer
 			if event.is_pressed():
+				mousePos = get_local_mouse_position()
 				mouse_timer.start(longClick)
 			else:
 				$Image.isPanning = false
-				if mouse_timer.time_left > 0:
+				if mouse_timer.time_left > 0 || mousePos == get_local_mouse_position():
 					doPan = false
 					if(mouseScheme == 0):
 						if($Bg.get_local_mouse_position().x < $Bg.rect_size.x/2):
