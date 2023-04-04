@@ -14,7 +14,7 @@ func initConfig():
 	config.set_value("controls", "auto_resize", true)
 	config.set_value("controls", "mute_on_pause", true)
 	config.set_value("controls", "zoom_step", 1.35)
-	config.set_value("controls", "long_click", 0.23)
+	config.set_value("controls", "long_click", 0.22)
 	config.set_value("controls", "mipmaps", false)
 	config.set_value("controls", "mouseScheme", 0)
 	config.set_value("color", "bind", true)

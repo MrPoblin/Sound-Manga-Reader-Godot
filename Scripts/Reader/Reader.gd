@@ -13,6 +13,7 @@ onready var prevSfx
 onready var autoResize:bool = Config.config.get_value("controls", "auto_resize")
 onready var longClick:float = Config.config.get_value("controls", "long_click")
 onready var mouseScheme:int = Config.config.get_value("controls", "mouseScheme", 0)
+#var mousePos:Vector2
 var signal_received:bool = false
 var doPan:bool
 
@@ -24,15 +25,9 @@ func _ready():
 func _input(event):
 	if event is InputEventKey:
 		if event.is_action_pressed("ui_left"):
-			if(swapLR):
-				next_page()
-			else:
-				prev_page()
+			leftPage()
 		if event.is_action_pressed("ui_right"):
-			if(swapLR):
-				prev_page()
-			else:
-				next_page()
+			rightPage()
 		if event.is_action_pressed("ui_up"):
 			prev_page()
 		if (event.is_action_pressed("ui_down") || event.is_action_pressed("ui_accept")):
@@ -138,12 +133,18 @@ func _on_Reader_visibility_changed():
 		AudioServer.set_bus_mute(0, false)
 
 func _on_Left_pressed():
+	leftPage()
+
+func _on_Right_pressed():
+	rightPage()
+
+func leftPage():
 	if(swapLR):
 		next_page()
 	else:
 		prev_page()
 
-func _on_Right_pressed():
+func rightPage():
 	if(swapLR):
 		prev_page()
 	else:
@@ -152,6 +153,7 @@ func _on_Right_pressed():
 func _on_Bg_gui_input(event):
 	if event is InputEventMouseButton:
 		if (event.button_index == BUTTON_LEFT) || (event.button_index == BUTTON_RIGHT && mouseScheme == 1):
+#			mousePos = get_local_mouse_position()
 			doPan = true
 			var mouse_timer = $Timer
 			if event.is_pressed():
@@ -162,26 +164,14 @@ func _on_Bg_gui_input(event):
 					doPan = false
 					if(mouseScheme == 0):
 						if($Bg.get_local_mouse_position().x < $Bg.rect_size.x/2):
-							if(swapLR):
-								next_page()
-							else:
-								prev_page()
+							leftPage()
 						else:
-							if(swapLR):
-								prev_page()
-							else:
-								next_page()
+							rightPage()
 					elif(mouseScheme == 1):
 						if(event.button_index == BUTTON_LEFT):
-							if(swapLR):
-								next_page()
-							else:
-								prev_page()
+							leftPage()
 						else:
-							if(swapLR):
-								prev_page()
-							else:
-								next_page()
+							rightPage()
 			mouse_timer = null
 
 func _on_Timer_timeout():

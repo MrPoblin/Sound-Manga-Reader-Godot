@@ -15,7 +15,7 @@ func update_values():
 	$OtherGrid/c_swap_lr.pressed = Config.config.get_value("controls", "swapLR", false)
 	$OtherGrid/c_auto_res.pressed = Config.config.get_value("controls", "auto_resize", true)
 	$s_zoom.value = clamp(Config.config.get_value("controls", "zoom_step", 1.35), 1, 2)
-	$s_long_click.value = clamp(Config.config.get_value("controls", "long_click", 0.23), 0.1, 1)
+	$s_long_click.value = clamp(Config.config.get_value("controls", "long_click", 0.22), 0.1, 1)
 	$OtherGrid/c_use_mipmaps.pressed = Config.config.get_value("controls", "mipmaps", false)
 	$ColorGrid/cp_main.color = Config.config.get_value("color", "main", Color.black)
 	$ColorGrid/cp_panel.color = Config.config.get_value("color", "panel", Color.black.lightened(0.12))
