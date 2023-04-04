@@ -5,8 +5,8 @@ func _ready():
 	update_values()
 
 func update_values():
-	$le_storage_manga.text = Config.config.get_value("storage", "manga", "")
-	$le_storage_music.text = Config.config.get_value("storage", "music", "")
+	$le_storage_manga.text = Config.config.get_value("storage", "manga", OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS) + "/")
+	$le_storage_music.text = Config.config.get_value("storage", "music", OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS) + "/")
 	$s_master.value = clamp(Config.config.get_value("audio", "master", 0.5), 0, 1)
 	$s_music.value = clamp(Config.config.get_value("audio", "music", 0.5), 0, 1)
 	$s_sfx.value = clamp(Config.config.get_value("audio", "sfx", 0.5), 0, 1)
