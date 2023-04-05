@@ -160,7 +160,7 @@ func _on_Bg_gui_input(event):
 				mouse_timer.start(longClick)
 			else:
 				$Image.isPanning = false
-				if mouse_timer.time_left > 0 || mousePos == get_local_mouse_position():
+				if mouse_timer.time_left > 0 || mousePos.distance_to(get_local_mouse_position())<(get_viewport().size.length()/100):
 					doPan = false
 					if(mouseScheme == 0):
 						if($Bg.get_local_mouse_position().x < $Bg.rect_size.x/2):
