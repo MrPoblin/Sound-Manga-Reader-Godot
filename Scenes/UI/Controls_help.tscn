@@ -49,7 +49,7 @@ text = "    Re-center - 'r', 'c'"
 margin_top = 72.0
 margin_right = 253.0
 margin_bottom = 86.0
-text = "    Pause - 'esc''"
+text = "    Pause - 'esc'"
 
 [node name="fullscreen" type="Label" parent="Keyboard Controls/kb_grid"]
 margin_top = 90.0
