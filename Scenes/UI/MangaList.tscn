@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/UI/ChapterSelect.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/UI/C_Panel.tscn" type="PackedScene" id=4]
 
-[node name="Manga_List" type="Control"]
+[node name="MangaList" type="Control"]
 anchor_left = 0.01
 anchor_top = 0.05
 anchor_right = 0.6
