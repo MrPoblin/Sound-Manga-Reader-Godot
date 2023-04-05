@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-onready var TemplateButton = load("res://Scenes/UI/TemplateButton.tscn")
+onready var TemplateButton = load("res://Scenes/UI/MangaButtonTemplate.tscn")
 
 func _ready():
 	var manga_path :String = Config.config.get_value("storage", "manga")
