@@ -7,6 +7,5 @@ func toggle_visibility():
 func _ready():
 	visible = false
 
-
 func _on_manga_button_pressed():
 	visible = false

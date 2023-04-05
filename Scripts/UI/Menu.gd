@@ -3,8 +3,8 @@ extends Control
 onready var SettingsNode = load("res://Scenes/UI/Settings.tscn")
 
 func _on_settings_button_pressed():
-	if(self.has_node("Settings")):
-		$Settings.toggle_visibility()
+	if($Panel.has_node("Settings")):
+		$Panel/Settings.toggle_visibility()
 
 
 func _on_controls_button_pressed():
