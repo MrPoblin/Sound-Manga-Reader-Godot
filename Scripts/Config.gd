@@ -19,7 +19,7 @@ func initConfig():
 	config.set_value("controls", "mouseScheme", 0)
 	config.set_value("color", "bind", true)
 	randomize()
-	var tempCol = Color(randf(),randf(),randf(), 1.02)*0.9
+	var tempCol = Color(randf(),randf(),randf(), 1.05)*0.9
 	config.set_value("color", "main", tempCol)
 	if(tempCol.get_luminance()>0.5):
 		config.set_value("color", "panel", tempCol.darkened((tempCol.get_luminance()-0.5)*0.24))
