@@ -1,7 +1,12 @@
 # Sound Manga Reader Godot
-Offline manga reader for manga with sound enhancement features (made with Godot 3.5.2)
+[![Total Download Count](https://img.shields.io/github/downloads/MrPoblin/Sound-Manga-Reader-Godot/total)](https://github.com/MrPoblin/Sound-Manga-Reader-Godot/releases/latest)
+[![Repo Size](https://img.shields.io/github/repo-size/MrPoblin/Sound-Manga-Reader-Godot)](https://github.com/MrPoblin/Sound-Manga-Reader-Godot)
+[![Discord](https://dcbadge.vercel.app/api/server/8TBW6zHMWJ?style=flat)](https://discord.gg/8TBW6zHMWJ)
+[![Repo Stars](https://img.shields.io/github/stars/MrPoblin/Sound-Manga-Reader-Godot?style=social)](https://github.com/MrPoblin/Sound-Manga-Reader-Godot)
 
-Based on the [Sound Manga Reader](https://gitlab.com/papjul/sound-manga-reader/) project.
+### Offline manga reader for manga with sound enhancement features (made with Godot 3.5.2)
+
+### Based on the [Sound Manga Reader](https://gitlab.com/papjul/sound-manga-reader/) project.
 ##
 
 Since the original project doesn't support Windows (except through emulation), I created this project to be able to read the Umineko manga with sound on PC (and also to learn how to use Godot)
