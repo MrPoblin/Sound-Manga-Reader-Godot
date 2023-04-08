@@ -39,9 +39,9 @@ bus = "Voice"
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Popup" type="Popup" parent="."]
+[node name="HelpPopup" type="Popup" parent="."]
 
-[node name="Controls_help" parent="Popup" instance=ExtResource( 4 )]
+[node name="Controls_help" parent="HelpPopup" instance=ExtResource( 4 )]
 
 [connection signal="resized" from="." to="." method="_on_Reader_resized"]
 [connection signal="visibility_changed" from="." to="." method="_on_Reader_visibility_changed"]

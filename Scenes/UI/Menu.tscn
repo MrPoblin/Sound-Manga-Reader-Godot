@@ -39,10 +39,19 @@ margin_left = 0.200005
 margin_right = 126.92
 margin_bottom = 159.0
 
+[node name="resume_button" type="Button" parent="MainMenuButtons"]
+visible = false
+margin_right = 139.0
+margin_bottom = 20.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+text = "Resume"
+
 [node name="manga_button" type="Button" parent="MainMenuButtons"]
 margin_right = 139.0
 margin_bottom = 20.0
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
 text = "Manga"
 
 [node name="settings_button" type="Button" parent="MainMenuButtons"]
@@ -50,6 +59,7 @@ margin_top = 24.0
 margin_right = 139.0
 margin_bottom = 44.0
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
 text = "Settings"
 
 [node name="controls_button" type="Button" parent="MainMenuButtons"]
@@ -57,6 +67,7 @@ margin_top = 48.0
 margin_right = 139.0
 margin_bottom = 68.0
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
 text = "Controls"
 
 [node name="exit_button" type="Button" parent="MainMenuButtons"]
@@ -64,6 +75,7 @@ margin_top = 72.0
 margin_right = 139.0
 margin_bottom = 92.0
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
 text = "Exit"
 script = ExtResource( 5 )
 
@@ -76,6 +88,7 @@ anchor_bottom = 0.945
 [node name="Controls_help" parent="Popup" instance=ExtResource( 8 )]
 
 [connection signal="resized" from="." to="." method="_on_Menu_resized"]
+[connection signal="pressed" from="MainMenuButtons/resume_button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="MainMenuButtons/manga_button" to="Panel/Settings" method="_on_manga_button_pressed"]
 [connection signal="pressed" from="MainMenuButtons/settings_button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MainMenuButtons/controls_button" to="." method="_on_controls_button_pressed"]

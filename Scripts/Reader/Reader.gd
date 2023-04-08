@@ -32,7 +32,7 @@ func _input(event):
 		if (event.is_action_pressed("ui_down") || event.is_action_pressed("ui_accept")):
 			next_page()
 		if event.is_action_pressed("help"):
-			$Popup.popup()
+			$HelpPopup.popup()
 
 func load_chapter(isBeginning):
 	if(isBeginning):
@@ -180,3 +180,5 @@ func _on_Timer_timeout():
 		$Image.isPanning = true
 		$Bg.mouse_default_cursor_shape= Control.CURSOR_MOVE
 
+func saveCurrent():
+	pass
