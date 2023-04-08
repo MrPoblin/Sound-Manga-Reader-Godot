@@ -9,6 +9,9 @@ func _ready():
 	load_bus(1, Config.config.get_value("audio", "music"))
 	load_bus(2, Config.config.get_value("audio", "sfx"))
 	load_bus(3, Config.config.get_value("audio", "voice"))
+	
+	if(Config.config.get_value("controls", "onTop")): OS.set_window_always_on_top(true)
+	else: OS.set_window_always_on_top(false)
 
 
 func _input(event):

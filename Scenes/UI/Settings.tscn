@@ -354,7 +354,7 @@ margin_left = 130.0
 margin_top = 276.0
 margin_right = 1216.0
 margin_bottom = 316.0
-columns = 4
+columns = 7
 
 [node name="c_bind_col" type="CheckButton" parent="set/SettingScroll/SettingGrid/OtherGrid3"]
 margin_right = 76.0
@@ -377,6 +377,25 @@ on Pause"
 [node name="c_mute_on_pause" type="CheckButton" parent="set/SettingScroll/SettingGrid/OtherGrid3"]
 margin_left = 166.0
 margin_right = 242.0
+margin_bottom = 40.0
+mouse_default_cursor_shape = 2
+
+[node name="sep6" type="VSeparator" parent="set/SettingScroll/SettingGrid/OtherGrid3"]
+margin_left = 246.0
+margin_right = 250.0
+margin_bottom = 40.0
+
+[node name="l_on_top" type="Label" parent="set/SettingScroll/SettingGrid/OtherGrid3"]
+margin_left = 254.0
+margin_top = 4.0
+margin_right = 298.0
+margin_bottom = 35.0
+text = "Always
+on Top"
+
+[node name="c_on_top" type="CheckButton" parent="set/SettingScroll/SettingGrid/OtherGrid3"]
+margin_left = 302.0
+margin_right = 378.0
 margin_bottom = 40.0
 mouse_default_cursor_shape = 2
 

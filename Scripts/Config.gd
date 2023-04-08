@@ -17,6 +17,7 @@ func initConfig():
 	config.set_value("controls", "long_click", 0.2)
 	config.set_value("controls", "mipmaps", false)
 	config.set_value("controls", "mouseScheme", 0)
+	config.set_value("controls", "onTop", false)
 	config.set_value("color", "bind", true)
 	randomize()
 	var tempCol = Color(randf(),randf(),randf(), 1.05)*0.9
