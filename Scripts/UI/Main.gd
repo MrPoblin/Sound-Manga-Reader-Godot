@@ -36,9 +36,9 @@ func init_reader(chapter):
 	if self.has_node("Reader"):
 		$Reader.free()
 	var newReader = ReaderNode.instance()
-	newReader.CORE = State.Core
 	newReader.Chapter = chapter
 	add_child(newReader)
+	$Reader.load_chapter(true)
 	$Menu.visible = false
 	$Reader.visible = true
 

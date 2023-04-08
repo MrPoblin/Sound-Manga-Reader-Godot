@@ -19,7 +19,6 @@ var doPan:bool
 
 
 func _ready():
-	load_chapter(true)
 	$Bg.color = Config.config.get_value("color", "bg")
 
 func _input(event):
@@ -97,7 +96,7 @@ func next_page():
 	PageNum += 1
 	if PageNum > PageCount-1:
 		var nextIndex = ChapterList.find(Chapter)+1
-		if nextIndex < (ChapterList.size()-1):
+		if nextIndex < (ChapterList.size()):
 			Chapter = ChapterList[nextIndex]
 			Pages = CORE["chapters"][Chapter]["pages"]
 			PageCount = CORE["chapters"][Chapter]["pages"].size()
