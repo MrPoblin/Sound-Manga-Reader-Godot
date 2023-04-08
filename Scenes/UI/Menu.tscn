@@ -88,6 +88,9 @@ anchor_bottom = 0.945
 [node name="Controls_help" parent="Popup" instance=ExtResource( 8 )]
 
 [connection signal="resized" from="." to="." method="_on_Menu_resized"]
+[connection signal="visibility_changed" from="." to="." method="_on_Menu_visibility_changed"]
+[connection signal="gui_input" from="MainMenuButtons/resume_button" to="." method="_on_resume_button_gui_input"]
+[connection signal="mouse_entered" from="MainMenuButtons/resume_button" to="." method="_on_resume_button_mouse_entered"]
 [connection signal="pressed" from="MainMenuButtons/resume_button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="MainMenuButtons/manga_button" to="Panel/Settings" method="_on_manga_button_pressed"]
 [connection signal="pressed" from="MainMenuButtons/settings_button" to="." method="_on_settings_button_pressed"]

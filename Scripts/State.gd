@@ -25,3 +25,7 @@ func load_script(file_path) -> Dictionary:
 
 func saveState():
 	state.save("user://save.dat")
+
+func clearState():
+	state.set_value("save", "latest", [])
+	saveState()

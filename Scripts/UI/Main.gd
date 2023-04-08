@@ -28,14 +28,13 @@ func _input(event):
 			$Reader.visible = !$Reader.visible
 			$Menu.visible = !$Menu.visible
 
-func init_reader(chapter):
-	#print(chapter)
+func init_reader(chapter, page):
 	if self.has_node("Reader"):
 		$Reader.free()
 	var newReader = ReaderNode.instance()
 	newReader.Chapter = chapter
 	add_child(newReader)
-	$Reader.load_chapter(true)
+	$Reader.load_chapter(false, page)
 	$Menu.visible = false
 	$Reader.visible = true
 

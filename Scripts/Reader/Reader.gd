@@ -34,14 +34,15 @@ func _input(event):
 		if event.is_action_pressed("help"):
 			$HelpPopup.popup()
 
-func load_chapter(isBeginning):
-	if(isBeginning):
-		PageNum = 0
-	else:
+func load_chapter(isEnd, page):
+	if(isEnd):
 		PageNum = PageCount-1
+	else:
+		PageNum = page
 	change_page(PageNum)
 
 func change_page(num):
+	saveCurrent(num)
 	var page:Dictionary = Pages[num]
 	var img:String = page["page"]
 	var bgm = page["bgm"]
@@ -83,14 +84,13 @@ func prev_page():
 			Chapter = ChapterList[prevIndex]
 			Pages = CORE["chapters"][Chapter]["pages"]
 			PageCount = CORE["chapters"][Chapter]["pages"].size()
-			load_chapter(false)
+			load_chapter(true, 0)
 		else:
 			$"../Menu".visible = true
 			self.visible = false
 			PageNum += 1
 	else:
 		change_page(PageNum)
-	#print(PageNum)
 
 func next_page():
 	PageNum += 1
@@ -100,8 +100,9 @@ func next_page():
 			Chapter = ChapterList[nextIndex]
 			Pages = CORE["chapters"][Chapter]["pages"]
 			PageCount = CORE["chapters"][Chapter]["pages"].size()
-			load_chapter(true)
+			load_chapter(false, 0)
 		else:
+			State.clearState()
 			$"../Menu".visible = true
 			self.visible = false
 			PageNum -= 1
@@ -112,7 +113,6 @@ func _on_Reader_resized():
 	if signal_received == false:
 		signal_received = true
 		return
-	print("res")
 	$Image.fill_center() #if(autoResize):
 
 func get_audio(loop, path):
@@ -180,5 +180,6 @@ func _on_Timer_timeout():
 		$Image.isPanning = true
 		$Bg.mouse_default_cursor_shape= Control.CURSOR_MOVE
 
-func saveCurrent():
-	pass
+func saveCurrent(pageNum):
+	State.state.set_value("save", "latest", [State.Folder, Chapter, pageNum])
+	State.saveState()
