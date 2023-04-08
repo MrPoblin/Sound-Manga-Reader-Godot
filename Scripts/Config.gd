@@ -39,3 +39,16 @@ func _ready():
 	else:
 #		loadConfig()
 		config.load("user://config.cfg")
+
+func load_volume():
+	load_bus(0, Config.config.get_value("audio", "master"))
+	load_bus(1, Config.config.get_value("audio", "music"))
+	load_bus(2, Config.config.get_value("audio", "sfx"))
+	load_bus(3, Config.config.get_value("audio", "voice"))
+
+func load_bus(id, linear):
+	if(linear>0): 
+		AudioServer.set_bus_mute(id, false)
+		AudioServer.set_bus_volume_db(id, 20 * (log(linear)/log(10)))
+	else: 
+		AudioServer.set_bus_mute(id, true)

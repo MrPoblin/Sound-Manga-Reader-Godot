@@ -5,10 +5,7 @@ onready var ReaderNode = preload("res://Scenes/Reader.tscn")
 onready var mouseScheme:int = Config.config.get_value("controls", "mouseScheme", 0)
 
 func _ready():
-	load_bus(0, Config.config.get_value("audio", "master"))
-	load_bus(1, Config.config.get_value("audio", "music"))
-	load_bus(2, Config.config.get_value("audio", "sfx"))
-	load_bus(3, Config.config.get_value("audio", "voice"))
+	Config.load_volume()
 	
 	if(Config.config.get_value("controls", "onTop")): OS.set_window_always_on_top(true)
 	else: OS.set_window_always_on_top(false)
@@ -42,9 +39,4 @@ func init_reader(chapter):
 	$Menu.visible = false
 	$Reader.visible = true
 
-func load_bus(id, linear):
-	if(linear>0): 
-		AudioServer.set_bus_mute(id, false)
-		AudioServer.set_bus_volume_db(id, 20 * (log(linear)/log(10)))
-	else: 
-		AudioServer.set_bus_mute(id, true)
+

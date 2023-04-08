@@ -77,3 +77,16 @@ func _on_SettingSave_pressed():
 	update_values()
 	get_tree().reload_current_scene()
 
+
+
+func _on_s_master_value_changed(value):
+	Config.load_bus(0, $s_master.value)
+
+func _on_s_music_value_changed(value):
+	Config.load_bus(1, $s_music.value)
+
+func _on_s_sfx_value_changed(value):
+	Config.load_bus(2, $s_sfx.value)
+
+func _on_s_voice_value_changed(value):
+	Config.load_bus(3, $s_voice.value)

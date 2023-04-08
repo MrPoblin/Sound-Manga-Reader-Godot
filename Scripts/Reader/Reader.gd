@@ -126,6 +126,7 @@ func get_audio(loop, path):
 	return ogg_stream
 
 func _on_Reader_visibility_changed():
+	Config.load_volume()
 	if(!visible&&Config.config.get_value("controls", "mute_on_pause")):
 		AudioServer.set_bus_mute(0, true)
 	elif(visible&&Config.config.get_value("audio", "master")>0):
