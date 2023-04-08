@@ -32,15 +32,6 @@ func find_json(folder_path):
 			file_path = dir.get_next()
 		dir.list_dir_end()
 
-#func LoadFileData(FilePath):
-#	var DataFile = File.new()
-#	var DataJSon
-#
-#	DataFile.open(FilePath, File.READ)
-#	DataJSon = JSON.parse(DataFile.get_as_text())
-#	DataFile.close()
-#	return DataJSon.result
-
 func load_title(file_path, folder_path):
 	var file = File.new()
 	file.open(file_path, file.READ)
