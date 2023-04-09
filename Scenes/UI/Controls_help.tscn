@@ -71,7 +71,7 @@ text = "    Reload Application - 'F5'"
 margin_top = 144.0
 margin_right = 253.0
 margin_bottom = 158.0
-text = "    Show Controls - 'h'"
+text = "    Show Controls - 'h', 'F1'"
 
 [node name="Mouse Controls" type="ScrollContainer" parent="."]
 visible = false
