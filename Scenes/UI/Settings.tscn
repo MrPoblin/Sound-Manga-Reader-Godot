@@ -71,7 +71,7 @@ margin_left = 119.0
 margin_top = 56.0
 margin_right = 1216.0
 margin_bottom = 96.0
-columns = 4
+columns = 5
 
 [node name="c_same" type="CheckButton" parent="set/SettingScroll/SettingGrid/LocationGrid"]
 margin_right = 76.0
@@ -84,19 +84,26 @@ margin_right = 84.0
 margin_bottom = 40.0
 size_flags_horizontal = 2
 
+[node name="Label" type="Label" parent="set/SettingScroll/SettingGrid/LocationGrid"]
+margin_left = 823.0
+margin_top = 13.0
+margin_right = 870.0
+margin_bottom = 27.0
+text = "Select: "
+
 [node name="man_but_sel" type="Button" parent="set/SettingScroll/SettingGrid/LocationGrid"]
-margin_left = 788.0
-margin_right = 942.0
+margin_left = 874.0
+margin_right = 985.0
 margin_bottom = 40.0
 mouse_default_cursor_shape = 2
-text = "Select Manga Location"
+text = "Manga Location"
 
 [node name="mus_but_sel" type="Button" parent="set/SettingScroll/SettingGrid/LocationGrid"]
-margin_left = 946.0
+margin_left = 989.0
 margin_right = 1097.0
 margin_bottom = 40.0
 mouse_default_cursor_shape = 2
-text = "Select Music Location"
+text = "Music Location"
 
 [node name="l_AudioMaster" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 101.0

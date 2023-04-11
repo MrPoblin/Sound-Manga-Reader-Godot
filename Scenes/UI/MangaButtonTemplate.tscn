@@ -3,9 +3,6 @@
 [ext_resource path="res://Scripts/UI/MangaButtonTemplate.gd" type="Script" id=1]
 
 [node name="MangaButtonTemplate" type="Button"]
-visible = false
-margin_right = 70.0
-margin_bottom = 20.0
 mouse_default_cursor_shape = 2
 text = "template"
 align = 0

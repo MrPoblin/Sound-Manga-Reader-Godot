@@ -17,21 +17,21 @@ func _on_ChapterList_visibility_changed():
 		add_volume(key)
 		for chap in Dict["volumes"][key]:
 			add_chapter(chap)
-#		add_spacing(key)
+		add_spacing(key)
 
 func add_volume(index):
 	var NewLabel = TemplateVolume.instance()
 	NewLabel.name = "vol" + index
-	NewLabel.text = "\n   Volume " + index
+	NewLabel.text = "     Volume " + index
 	NewLabel.visible = true
 	add_child(NewLabel)
 
-#func add_spacing(index):
-#	var NewLabel = TemplateVolume.instance()
-#	NewLabel.name = "space" + index
-#	NewLabel.text = "          "
-#	NewLabel.visible = true
-#	add_child(NewLabel)
+func add_spacing(index):
+	var NewLabel = TemplateVolume.instance()
+	NewLabel.name = "space" + index
+	NewLabel.text = "          "
+	NewLabel.visible = true
+	add_child(NewLabel)
 
 func add_chapter(number):
 	var NewButton = TemplateButton.instance()
