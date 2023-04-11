@@ -2,12 +2,13 @@ extends Control
 
 onready var ReaderNode = preload("res://Scenes/Reader.tscn")
 var font: DynamicFont = load("res://default_font.tres")
+export var themeAlpha:float
 
 onready var mouseScheme:int = Config.config.get_value("controls", "mouseScheme", 0)
 
 func _ready() -> void:
 	Config.load_volume()
-	
+	initTheme()
 	if(Config.config.get_value("controls", "onTop")): 
 		OS.set_window_always_on_top(true)
 	else: 
@@ -45,7 +46,6 @@ func _on_Main_resized(wait) -> void:
 	fontSet(wait)
 
 var isPaused: bool = false
-
 func fontSet(wait: int = false) -> void:
 	if (!isPaused):
 		isPaused = true
@@ -56,3 +56,19 @@ func fontSet(wait: int = false) -> void:
 		if(font.size != newFont):
 			font.size = newFont
 			font.outline_size = newFont/18
+
+func initTheme() -> void:
+	var modulateColor:Color = Config.config.get_value("color", "panel")
+	modulateColor.a = themeAlpha
+	var currentTheme = get_theme()
+	var styleboxData = {
+		"Button":["normal", "pressed", "hover", "disabled"],
+		"LineEdit":["normal", "read_only"]
+	}
+	for styleType in styleboxData:
+		for styleItem in styleboxData[styleType]:
+			var styleEdit = currentTheme.get_stylebox(styleItem, styleType)
+			styleEdit.modulate_color = modulateColor
+#			if...
+			currentTheme.set_stylebox(styleItem, styleType, styleEdit)
+	set_theme(currentTheme)
