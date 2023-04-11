@@ -1,6 +1,7 @@
 extends Control
 
 onready var ReaderNode = preload("res://Scenes/Reader.tscn")
+var font = load("res://default_font.tres")
 
 onready var mouseScheme:int = Config.config.get_value("controls", "mouseScheme", 0)
 
@@ -40,4 +41,8 @@ func init_reader(chapter, page: int = 0) -> void:
 	$Menu.visible = false
 	$Reader.visible = true
 
-
+func _on_Main_resized() -> void:
+	var newFont: int = int(sqrt(get_viewport_rect().size.y*get_viewport_rect().size.x)/50)
+	if(font.size != newFont):
+		font.size = newFont
+		font.outline_size = newFont/18
