@@ -85,7 +85,6 @@ anchor_bottom = 0.945
 [node name="Controls_help" parent="Popup" instance=ExtResource( 8 )]
 
 [node name="ErrorCore" type="Popup" parent="."]
-visible = true
 
 [node name="Label" type="Label" parent="ErrorCore"]
 margin_right = 40.0

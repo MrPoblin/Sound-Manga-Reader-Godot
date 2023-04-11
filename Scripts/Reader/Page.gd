@@ -11,11 +11,11 @@ onready var isPanning:bool = false
 onready var mouseStart:Vector2
 onready var doSkip:bool = false
 
-func _process(delta):
+func _process(_delta):
 	if(isPanning):
 		rect_position += (get_local_mouse_position() - mouseStart) * rect_scale
 		mouseStart = get_local_mouse_position()
-	else:$"../Bg".mouse_default_cursor_shape= Control.CURSOR_ARROW
+	else: $"../Bg".mouse_default_cursor_shape = Control.CURSOR_ARROW
 
 func _input(event):
 	if event.is_action_pressed("center"):

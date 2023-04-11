@@ -1,7 +1,7 @@
 extends Control
 
 onready var ReaderNode = preload("res://Scenes/Reader.tscn")
-var font = load("res://default_font.tres")
+var font: DynamicFont = load("res://default_font.tres")
 
 onready var mouseScheme:int = Config.config.get_value("controls", "mouseScheme", 0)
 
