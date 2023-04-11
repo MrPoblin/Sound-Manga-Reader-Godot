@@ -22,10 +22,12 @@ func _input(event):
 func _on_resume_button_pressed():
 	latestSave = State.state.get_value("save", "latest")
 	State.Core = State.load_script(Config.config.get_value("storage", "manga") + latestSave[0] + "/script.json")
-	State.FolderLocation = Config.config.get_value("storage", "manga") + latestSave[0]
-	State.Folder = latestSave[0]
-	var root_node = get_tree().get_root()
-	root_node.get_node("Main").init_reader(latestSave[1], latestSave[2])
+	if(State.Core): 
+		State.FolderLocation = Config.config.get_value("storage", "manga") + latestSave[0]
+		State.Folder = latestSave[0]
+		var root_node = get_tree().get_root()
+		root_node.get_node("Main").init_reader(latestSave[1], latestSave[2])
+	else: $ErrorCore.popup_centered()
 
 func _on_resume_button_mouse_entered():
 	latestSave = State.state.get_value("save", "latest", [])

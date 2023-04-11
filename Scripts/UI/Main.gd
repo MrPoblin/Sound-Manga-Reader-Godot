@@ -46,7 +46,7 @@ var isPaused: bool = false
 func _on_Main_resized() -> void:
 	if (!isPaused):
 		isPaused = true
-		yield(get_tree().create_timer(0.24), "timeout")
+		yield(get_tree().create_timer(0.2), "timeout")
 		isPaused = false
 		var newFont: int = int(sqrt(get_viewport_rect().size.y*get_viewport_rect().size.x)/50) #Choose the scale in settings?
 		if(font.size != newFont):

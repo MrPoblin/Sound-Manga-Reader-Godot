@@ -33,6 +33,16 @@ custom_constants/hseparation = 20
 columns = 2
 script = ExtResource( 2 )
 
+[node name="SelectLocation" type="FileDialog" parent="set/SettingScroll/SettingGrid"]
+margin_right = 1085.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 320, 270 )
+window_title = "Open a Directory"
+resizable = true
+mode = 2
+access = 2
+script = ExtResource( 4 )
+
 [node name="l_storage_manga" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 5.0
 margin_right = 99.0
@@ -71,6 +81,7 @@ margin_left = 119.0
 margin_top = 56.0
 margin_right = 1216.0
 margin_bottom = 96.0
+rect_clip_content = true
 columns = 5
 
 [node name="c_same" type="CheckButton" parent="set/SettingScroll/SettingGrid/LocationGrid"]
@@ -230,17 +241,6 @@ margin_left = 372.0
 margin_right = 448.0
 margin_bottom = 40.0
 mouse_default_cursor_shape = 2
-
-[node name="SelectLocation" type="FileDialog" parent="set/SettingScroll/SettingGrid"]
-margin_top = 216.0
-margin_right = 357.0
-margin_bottom = 346.0
-rect_min_size = Vector2( 320, 270 )
-window_title = "Open a Directory"
-resizable = true
-mode = 2
-access = 2
-script = ExtResource( 4 )
 
 [node name="l_color_main" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 227.0
@@ -515,6 +515,7 @@ margin_bottom = -502.378
 popup_exclusive = true
 window_title = "Reset Settings?"
 
+[connection signal="dir_selected" from="set/SettingScroll/SettingGrid/SelectLocation" to="set/SettingScroll/SettingGrid/SelectLocation" method="_on_SelectLocation_dir_selected"]
 [connection signal="toggled" from="set/SettingScroll/SettingGrid/LocationGrid/c_same" to="set/SettingScroll/SettingGrid" method="_on_c_same_toggled"]
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/LocationGrid/man_but_sel" to="set/SettingScroll/SettingGrid/SelectLocation" method="_on_man_but_sel_pressed"]
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/LocationGrid/mus_but_sel" to="set/SettingScroll/SettingGrid/SelectLocation" method="_on_mus_but_sel_pressed"]
@@ -522,7 +523,6 @@ window_title = "Reset Settings?"
 [connection signal="value_changed" from="set/SettingScroll/SettingGrid/s_music" to="set/SettingScroll/SettingGrid" method="_on_s_music_value_changed"]
 [connection signal="value_changed" from="set/SettingScroll/SettingGrid/s_sfx" to="set/SettingScroll/SettingGrid" method="_on_s_sfx_value_changed"]
 [connection signal="value_changed" from="set/SettingScroll/SettingGrid/s_voice" to="set/SettingScroll/SettingGrid" method="_on_s_voice_value_changed"]
-[connection signal="dir_selected" from="set/SettingScroll/SettingGrid/SelectLocation" to="set/SettingScroll/SettingGrid/SelectLocation" method="_on_SelectLocation_dir_selected"]
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/ColorGrid/b_ran_main" to="set/SettingScroll/SettingGrid/ColorGrid" method="_on_b_ran_main_pressed"]
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/ColorGrid/b_ran_panel" to="set/SettingScroll/SettingGrid/ColorGrid" method="_on_b_ran_panel_pressed"]
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/ColorGrid/b_ran_bg" to="set/SettingScroll/SettingGrid/ColorGrid" method="_on_b_ran_bg_pressed"]

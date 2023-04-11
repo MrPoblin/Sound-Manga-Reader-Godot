@@ -16,12 +16,14 @@ func _ready():
 
 func load_script(file_path) -> Dictionary:
 	var file = File.new()
-	file.open(file_path, file.READ)
-	var text = file.get_as_text()
-	var parse = JSON.parse(text)
-	var dict = parse.result
-	file.close()
-	return dict
+	if file.open(file_path, File.READ) == OK:
+		var text = file.get_as_text()
+		var parse = JSON.parse(text)
+		var dict = parse.result
+		file.close()
+		return dict
+	else:
+		return {}
 
 func saveState():
 	state.save("user://save.dat")
