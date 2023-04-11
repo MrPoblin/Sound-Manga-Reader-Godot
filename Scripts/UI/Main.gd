@@ -42,7 +42,7 @@ func init_reader(chapter, page: int = 0) -> void:
 	$Reader.visible = true
 
 func _on_Main_resized() -> void:
-	var newFont: int = int(sqrt(get_viewport_rect().size.y*get_viewport_rect().size.x)/50)
+	var newFont: int = int(sqrt(get_viewport_rect().size.y*get_viewport_rect().size.x)/50) #Choose the scale in settings?
 	if(font.size != newFont):
 		font.size = newFont
 		font.outline_size = newFont/18
