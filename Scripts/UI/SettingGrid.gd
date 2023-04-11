@@ -3,6 +3,8 @@ extends GridContainer
 
 func _ready():
 	update_values()
+#	separate()
+
 
 func update_values():
 	$le_storage_manga.text = Config.config.get_value("storage", "manga", OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS) + "/")
@@ -89,3 +91,16 @@ func _on_s_sfx_value_changed(value):
 
 func _on_s_voice_value_changed(value):
 	Config.load_bus(3, value)
+
+func separate() -> void:
+	var childNum: int = self.get_child_count()
+	var children = self.get_children()
+	var num: int = 0
+	for child in children:
+		if(num == 2):
+			var newSep = HSeparator.new()
+			self.add_child_below_node(child, newSep)
+			newSep = HSeparator.new()
+			self.add_child_below_node(child, newSep)
+			num = 0
+		num += 1

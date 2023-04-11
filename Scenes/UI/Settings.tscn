@@ -22,11 +22,11 @@ anchor_bottom = 0.99
 
 [node name="SettingScroll" type="ScrollContainer" parent="set"]
 anchor_right = 0.98
-anchor_bottom = 1.0
+anchor_bottom = 0.98
 
 [node name="SettingGrid" type="GridContainer" parent="set/SettingScroll"]
 margin_right = 1216.77
-margin_bottom = 379.0
+margin_bottom = 397.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 4
 custom_constants/hseparation = 20
@@ -453,6 +453,12 @@ margin_bottom = 379.0
 size_flags_horizontal = 0
 script = ExtResource( 9 )
 
+[node name="space" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 383.0
+margin_right = 99.0
+margin_bottom = 397.0
+text = "    "
+
 [node name="SettEndGrid" type="GridContainer" parent="set"]
 anchor_top = 0.92
 anchor_right = 0.98
@@ -485,6 +491,7 @@ window_title = "Discard Changes?"
 margin_left = 205.0
 margin_right = 1132.0
 margin_bottom = 52.0
+mouse_filter = 2
 size_flags_horizontal = 3
 
 [node name="SettingReset" type="Button" parent="set/SettEndGrid"]
