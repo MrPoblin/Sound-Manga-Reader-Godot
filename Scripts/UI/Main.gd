@@ -41,12 +41,16 @@ func init_reader(chapter, page: int = 0) -> void:
 	$Menu.visible = false
 	$Reader.visible = true
 
+func _on_Main_resized(wait) -> void:
+	fontSet(wait)
+
 var isPaused: bool = false
 
-func _on_Main_resized() -> void:
+func fontSet(wait: int = false) -> void:
 	if (!isPaused):
 		isPaused = true
-		yield(get_tree().create_timer(0.2), "timeout")
+		if(wait):
+			yield(get_tree().create_timer(0.2), "timeout")
 		isPaused = false
 		var newFont: int = int(sqrt(get_viewport_rect().size.y*get_viewport_rect().size.x)/50) #Choose the scale in settings?
 		if(font.size != newFont):

@@ -12,4 +12,4 @@ script = ExtResource( 2 )
 
 [node name="Menu" parent="." instance=ExtResource( 1 )]
 
-[connection signal="resized" from="." to="." method="_on_Main_resized"]
+[connection signal="resized" from="." to="." method="_on_Main_resized" binds= [ true ]]
