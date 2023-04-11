@@ -62,13 +62,21 @@ func initTheme() -> void:
 	modulateColor.a = themeAlpha
 	var currentTheme = get_theme()
 	var styleboxData = {
-		"Button":["normal", "pressed", "hover", "disabled"],
-		"LineEdit":["normal", "read_only"]
+		"Button": ["normal", "pressed", "hover", "disabled"],
+		"LineEdit": ["normal", "read_only"],
+		"HSlider": ["slider", "grabber_area", "grabber_area_highlight"]
 	}
 	for styleType in styleboxData:
 		for styleItem in styleboxData[styleType]:
 			var styleEdit = currentTheme.get_stylebox(styleItem, styleType)
 			styleEdit.modulate_color = modulateColor
-#			if...
+			if(styleItem == "grabber_area_highlight"):
+				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.1
+			elif(styleItem == "pressed"):
+				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.1
+			elif(styleItem == "hover"):
+				styleEdit.modulate_color.a = styleEdit.modulate_color.a - 0.033
+			elif(styleItem == "disabled" || styleItem == "read_only"):
+				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.28
 			currentTheme.set_stylebox(styleItem, styleType, styleEdit)
 	set_theme(currentTheme)
