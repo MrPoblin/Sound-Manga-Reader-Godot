@@ -454,25 +454,25 @@ size_flags_horizontal = 0
 script = ExtResource( 9 )
 
 [node name="SettEndGrid" type="GridContainer" parent="set"]
-anchor_top = 0.91
+anchor_top = 0.92
 anchor_right = 0.98
-anchor_bottom = 0.99
+anchor_bottom = 0.995
 columns = 4
 
 [node name="SettingSave" type="Button" parent="set/SettEndGrid"]
 margin_right = 120.0
-margin_bottom = 51.0
+margin_bottom = 52.0
 rect_min_size = Vector2( 120, 0 )
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3
-text = "SAVE"
+text = " SAVE "
 
 [node name="SettingDiscard" type="Button" parent="set/SettEndGrid"]
 margin_left = 124.0
-margin_right = 193.0
-margin_bottom = 51.0
+margin_right = 201.0
+margin_bottom = 52.0
 mouse_default_cursor_shape = 2
-text = "DISCARD"
+text = " DISCARD "
 script = ExtResource( 8 )
 
 [node name="DiscardConf" type="ConfirmationDialog" parent="set/SettEndGrid/SettingDiscard"]
@@ -482,26 +482,19 @@ popup_exclusive = true
 window_title = "Discard Changes?"
 
 [node name="endSpace" type="Control" parent="set/SettEndGrid"]
-margin_left = 197.0
+margin_left = 205.0
 margin_right = 1132.0
-margin_bottom = 51.0
+margin_bottom = 52.0
 size_flags_horizontal = 3
-
-[node name="\?" type="Button" parent="set/SettEndGrid"]
-visible = false
-margin_left = 712.0
-margin_right = 730.0
-margin_bottom = 26.0
-text = "?"
 
 [node name="SettingReset" type="Button" parent="set/SettEndGrid"]
 margin_left = 1136.0
 margin_right = 1216.0
-margin_bottom = 51.0
+margin_bottom = 52.0
 rect_min_size = Vector2( 80, 0 )
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3
-text = "RESET"
+text = " RESET "
 script = ExtResource( 6 )
 
 [node name="ResetConf" type="ConfirmationDialog" parent="set/SettEndGrid/SettingReset"]
