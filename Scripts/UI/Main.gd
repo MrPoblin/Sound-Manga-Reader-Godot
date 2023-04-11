@@ -4,14 +4,16 @@ onready var ReaderNode = preload("res://Scenes/Reader.tscn")
 
 onready var mouseScheme:int = Config.config.get_value("controls", "mouseScheme", 0)
 
-func _ready():
+func _ready() -> void:
 	Config.load_volume()
 	
-	if(Config.config.get_value("controls", "onTop")): OS.set_window_always_on_top(true)
-	else: OS.set_window_always_on_top(false)
+	if(Config.config.get_value("controls", "onTop")): 
+		OS.set_window_always_on_top(true)
+	else: 
+		OS.set_window_always_on_top(false)
 
 
-func _input(event):
+func _input(event) -> void:
 	if event is InputEventKey:
 		if event.is_action_pressed("reload"):
 			get_tree().reload_current_scene()
@@ -28,13 +30,13 @@ func _input(event):
 			$Reader.visible = !$Reader.visible
 			$Menu.visible = !$Menu.visible
 
-func init_reader(chapter, page):
+func init_reader(chapter, page: int = 0) -> void:
 	if self.has_node("Reader"):
 		$Reader.free()
 	var newReader = ReaderNode.instance()
 	newReader.Chapter = chapter
 	add_child(newReader)
-	$Reader.load_chapter(false, page)
+	$Reader.load_chapter(page)
 	$Menu.visible = false
 	$Reader.visible = true
 

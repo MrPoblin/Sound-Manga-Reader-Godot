@@ -3,7 +3,7 @@ extends VBoxContainer
 onready var TemplateButton = load("res://Scenes/UI/MangaButtonTemplate.tscn")
 onready var manga_path :String = Config.config.get_value("storage", "manga")
 
-func _ready():
+func _ready() -> void:
 	var folders:Array = check_all_folders(manga_path)
 	folders = array_with_script(manga_path, folders)
 	for folder in folders:
@@ -35,7 +35,7 @@ func array_with_script(folder_path, array) -> Array:
 				newArray.append(value)
 	return newArray
 
-func add_button(title, dict, folder_path, folder):
+func add_button(title, dict, folder_path, folder) -> void:
 	$no_manga.visible = false
 	var NewButton = TemplateButton.instance()
 	NewButton.name = title
