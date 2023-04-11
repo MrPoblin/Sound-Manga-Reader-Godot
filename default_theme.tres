@@ -1,10 +1,23 @@
-[gd_resource type="Theme" load_steps=4 format=2]
+[gd_resource type="Theme" load_steps=7 format=2]
 
 [ext_resource path="res://default_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/grey_boxCheckmark.png" type="Texture" id=2]
 [ext_resource path="res://Assets/grey_box.png" type="Texture" id=3]
+[ext_resource path="res://Assets/blue_sliderDown.png" type="Texture" id=4]
+[ext_resource path="res://Assets/grey_sliderDown.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0.978699, 0, 36.1119, 36 )
+margin_left = 9.65454
+margin_right = 9.39751
+margin_top = 6.82727
+margin_bottom = 7.2128
 
 [resource]
 default_font = ExtResource( 1 )
 CheckBox/icons/checked = ExtResource( 2 )
 CheckBox/icons/unchecked = ExtResource( 3 )
+HSlider/icons/grabber = ExtResource( 5 )
+HSlider/icons/grabber_highlight = ExtResource( 4 )
+HSlider/styles/slider = SubResource( 1 )
