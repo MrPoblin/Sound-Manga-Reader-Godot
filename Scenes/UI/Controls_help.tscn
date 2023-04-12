@@ -109,7 +109,7 @@ text = "    Re-center - 'middle mouse button'"
 margin_top = 54.0
 margin_right = 316.0
 margin_bottom = 68.0
-text = "    Pan - hold & drag"
+text = "    Pan - hold click & drag"
 
 [node name="zoom_in" type="Label" parent="Mouse Controls/mouse_grid"]
 margin_top = 72.0
