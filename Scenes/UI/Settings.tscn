@@ -20,28 +20,30 @@ anchor_top = 0.02
 anchor_right = 1.0
 anchor_bottom = 0.99
 
+[node name="SelectLocation" type="FileDialog" parent="set"]
+anchor_left = 0.03
+anchor_top = 0.08
+anchor_right = 0.22
+anchor_bottom = 0.92
+rect_min_size = Vector2( 40, 20 )
+window_title = "Open a Directory"
+resizable = true
+mode = 2
+access = 2
+script = ExtResource( 4 )
+
 [node name="SettingScroll" type="ScrollContainer" parent="set"]
 anchor_right = 0.98
 anchor_bottom = 0.98
 
 [node name="SettingGrid" type="GridContainer" parent="set/SettingScroll"]
 margin_right = 1216.77
-margin_bottom = 397.0
+margin_bottom = 417.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 4
 custom_constants/hseparation = 20
 columns = 2
 script = ExtResource( 2 )
-
-[node name="SelectLocation" type="FileDialog" parent="set/SettingScroll/SettingGrid"]
-margin_right = 1085.0
-margin_bottom = 270.0
-rect_min_size = Vector2( 320, 270 )
-window_title = "Open a Directory"
-resizable = true
-mode = 2
-access = 2
-script = ExtResource( 4 )
 
 [node name="l_storage_manga" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 5.0
@@ -403,17 +405,34 @@ margin_right = 222.0
 margin_bottom = 31.0
 mouse_default_cursor_shape = 2
 
-[node name="l_zoom" type="Label" parent="set/SettingScroll/SettingGrid"]
+[node name="l_ui_scale" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 294.0
 margin_right = 99.0
 margin_bottom = 308.0
-text = "Zoom Step"
+text = "UI Scale"
 
-[node name="s_zoom" type="HSlider" parent="set/SettingScroll/SettingGrid"]
+[node name="s_ui_scale" type="HSlider" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
 margin_top = 293.0
 margin_right = 1216.0
 margin_bottom = 309.0
+mouse_default_cursor_shape = 10
+size_flags_vertical = 1
+max_value = 80.0
+value = 50.0
+
+[node name="l_zoom" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 314.0
+margin_right = 99.0
+margin_bottom = 328.0
+text = "Zoom Step"
+
+[node name="s_zoom" type="HSlider" parent="set/SettingScroll/SettingGrid"]
+margin_left = 119.0
+margin_top = 313.0
+margin_right = 1216.0
+margin_bottom = 329.0
+mouse_default_cursor_shape = 10
 size_flags_vertical = 1
 min_value = 1.0
 max_value = 2.0
@@ -421,17 +440,18 @@ step = 0.005
 value = 1.0
 
 [node name="l_long_click" type="Label" parent="set/SettingScroll/SettingGrid"]
-margin_top = 313.0
+margin_top = 333.0
 margin_right = 99.0
-margin_bottom = 344.0
+margin_bottom = 364.0
 text = "Click & Hold 
 Time to Pan"
 
 [node name="s_long_click" type="HSlider" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
-margin_top = 313.0
+margin_top = 333.0
 margin_right = 1216.0
-margin_bottom = 344.0
+margin_bottom = 364.0
+mouse_default_cursor_shape = 10
 size_flags_vertical = 1
 min_value = 0.02
 max_value = 0.5
@@ -439,24 +459,24 @@ step = 0.002
 value = 0.02
 
 [node name="l_scheme" type="Label" parent="set/SettingScroll/SettingGrid"]
-margin_top = 348.0
+margin_top = 368.0
 margin_right = 99.0
-margin_bottom = 379.0
+margin_bottom = 399.0
 text = "Mouse Control
 Scheme"
 
 [node name="op_scheme" type="OptionButton" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
-margin_top = 348.0
+margin_top = 368.0
 margin_right = 148.0
-margin_bottom = 379.0
+margin_bottom = 399.0
 size_flags_horizontal = 0
 script = ExtResource( 9 )
 
 [node name="space" type="Label" parent="set/SettingScroll/SettingGrid"]
-margin_top = 383.0
+margin_top = 403.0
 margin_right = 99.0
-margin_bottom = 397.0
+margin_bottom = 417.0
 text = "    "
 
 [node name="SettEndGrid" type="GridContainer" parent="set"]
@@ -512,10 +532,10 @@ margin_bottom = -502.378
 popup_exclusive = true
 window_title = "Reset Settings?"
 
-[connection signal="dir_selected" from="set/SettingScroll/SettingGrid/SelectLocation" to="set/SettingScroll/SettingGrid/SelectLocation" method="_on_SelectLocation_dir_selected"]
+[connection signal="dir_selected" from="set/SelectLocation" to="set/SelectLocation" method="_on_SelectLocation_dir_selected"]
 [connection signal="toggled" from="set/SettingScroll/SettingGrid/LocationGrid/c_same" to="set/SettingScroll/SettingGrid" method="_on_c_same_toggled"]
-[connection signal="pressed" from="set/SettingScroll/SettingGrid/LocationGrid/man_but_sel" to="set/SettingScroll/SettingGrid/SelectLocation" method="_on_man_but_sel_pressed"]
-[connection signal="pressed" from="set/SettingScroll/SettingGrid/LocationGrid/mus_but_sel" to="set/SettingScroll/SettingGrid/SelectLocation" method="_on_mus_but_sel_pressed"]
+[connection signal="pressed" from="set/SettingScroll/SettingGrid/LocationGrid/man_but_sel" to="set/SelectLocation" method="_on_man_but_sel_pressed"]
+[connection signal="pressed" from="set/SettingScroll/SettingGrid/LocationGrid/mus_but_sel" to="set/SelectLocation" method="_on_mus_but_sel_pressed"]
 [connection signal="value_changed" from="set/SettingScroll/SettingGrid/s_master" to="set/SettingScroll/SettingGrid" method="_on_s_master_value_changed"]
 [connection signal="value_changed" from="set/SettingScroll/SettingGrid/s_music" to="set/SettingScroll/SettingGrid" method="_on_s_music_value_changed"]
 [connection signal="value_changed" from="set/SettingScroll/SettingGrid/s_sfx" to="set/SettingScroll/SettingGrid" method="_on_s_sfx_value_changed"]
@@ -524,6 +544,7 @@ window_title = "Reset Settings?"
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/ColorGrid/b_ran_panel" to="set/SettingScroll/SettingGrid/ColorGrid" method="_on_b_ran_panel_pressed"]
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/ColorGrid/b_ran_bg" to="set/SettingScroll/SettingGrid/ColorGrid" method="_on_b_ran_bg_pressed"]
 [connection signal="toggled" from="set/SettingScroll/SettingGrid/OtherGrid3/c_bind_col" to="set/SettingScroll/SettingGrid/ColorGrid" method="_on_c_bind_col_toggled"]
+[connection signal="value_changed" from="set/SettingScroll/SettingGrid/s_ui_scale" to="set/SettingScroll/SettingGrid" method="_on_s_ui_scale_value_changed"]
 [connection signal="pressed" from="set/SettEndGrid/SettingSave" to="set/SettingScroll/SettingGrid" method="_on_SettingSave_pressed"]
 [connection signal="pressed" from="set/SettEndGrid/SettingDiscard" to="set/SettEndGrid/SettingDiscard" method="_on_SettingDiscard_pressed"]
 [connection signal="confirmed" from="set/SettEndGrid/SettingDiscard/DiscardConf" to="set/SettEndGrid/SettingDiscard" method="_on_DiscardConf_confirmed"]

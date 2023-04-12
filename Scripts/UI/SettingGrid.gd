@@ -26,6 +26,7 @@ func update_values():
 	$OtherGrid3/c_mute_on_pause.pressed = Config.config.get_value("controls", "mute_on_pause", true)
 	$op_scheme.select(Config.config.get_value("controls", "mouseScheme", 0)) 
 	$OtherGrid3/c_on_top.pressed = Config.config.get_value("controls", "onTop", false)
+	$s_ui_scale.value = Config.config.get_value("controls", "uiScale", 50)
 
 
 func _on_c_same_toggled(button_pressed):
@@ -75,6 +76,7 @@ func _on_SettingSave_pressed():
 	Config.config.set_value("controls", "mipmaps", $OtherGrid/c_use_mipmaps.pressed)
 	Config.config.set_value("controls", "mouseScheme", $op_scheme.get_selected())
 	Config.config.set_value("controls", "onTop", $OtherGrid3/c_on_top.pressed)
+	Config.config.set_value("controls", "uiScale", 100 - $s_ui_scale.value)
 	Config.config.save("user://config.cfg")
 	update_values()
 	get_tree().reload_current_scene()
@@ -104,3 +106,7 @@ func separate() -> void:
 			self.add_child_below_node(child, newSep)
 			num = 0
 		num += 1
+
+func _on_s_ui_scale_value_changed(value):
+	var MainNode = get_tree().get_root().get_node("Main")
+	MainNode.setFont(0.1, 100 - value)

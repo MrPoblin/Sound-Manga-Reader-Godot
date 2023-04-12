@@ -13,4 +13,4 @@ themeAlpha = 0.18
 
 [node name="Menu" parent="." instance=ExtResource( 1 )]
 
-[connection signal="resized" from="." to="." method="_on_Main_resized" binds= [ true ]]
+[connection signal="resized" from="." to="." method="_on_Main_resized"]
