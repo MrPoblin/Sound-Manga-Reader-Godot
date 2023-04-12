@@ -84,6 +84,8 @@ func _on_SettingSave_pressed():
 
 func _on_s_master_value_changed(value):
 	Config.load_bus(0, value)
+	if(Config.config.get_value("controls", "mute_on_pause")): 
+		AudioServer.set_bus_mute(0, true)
 
 func _on_s_music_value_changed(value):
 	Config.load_bus(1, value)

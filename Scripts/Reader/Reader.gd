@@ -127,7 +127,7 @@ func get_audio(loop, path):
 
 func _on_Reader_visibility_changed() -> void:
 	Config.load_volume()
-	if(!visible&&Config.config.get_value("controls", "mute_on_pause")):
+	if(!visible&&Config.config.get_value("controls", "mute_on_pause")): #Coule be handled by an extra audio bus
 		AudioServer.set_bus_mute(0, true)
 	elif(visible&&Config.config.get_value("audio", "master")>0):
 		AudioServer.set_bus_mute(0, false)
