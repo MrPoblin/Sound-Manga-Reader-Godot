@@ -34,11 +34,11 @@ script = ExtResource( 4 )
 
 [node name="SettingScroll" type="ScrollContainer" parent="set"]
 anchor_right = 0.98
-anchor_bottom = 0.98
+anchor_bottom = 0.975
 
 [node name="SettingGrid" type="GridContainer" parent="set/SettingScroll"]
 margin_right = 1216.77
-margin_bottom = 417.0
+margin_bottom = 382.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 4
 custom_constants/hseparation = 20
@@ -439,44 +439,58 @@ max_value = 2.0
 step = 0.005
 value = 1.0
 
-[node name="l_long_click" type="Label" parent="set/SettingScroll/SettingGrid"]
+[node name="l_scheme" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 333.0
 margin_right = 99.0
 margin_bottom = 364.0
-text = "Click & Hold 
-Time to Pan"
+text = "Mouse Control
+Scheme"
 
-[node name="s_long_click" type="HSlider" parent="set/SettingScroll/SettingGrid"]
+[node name="OtherGrid4" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
 margin_top = 333.0
 margin_right = 1216.0
 margin_bottom = 364.0
-mouse_default_cursor_shape = 10
-size_flags_vertical = 1
-min_value = 0.02
-max_value = 0.5
-step = 0.002
-value = 0.02
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 5
 
-[node name="l_scheme" type="Label" parent="set/SettingScroll/SettingGrid"]
-margin_top = 368.0
-margin_right = 99.0
-margin_bottom = 399.0
-text = "Mouse Control
-Scheme"
-
-[node name="op_scheme" type="OptionButton" parent="set/SettingScroll/SettingGrid"]
-margin_left = 119.0
-margin_top = 368.0
-margin_right = 148.0
-margin_bottom = 399.0
+[node name="op_scheme" type="OptionButton" parent="set/SettingScroll/SettingGrid/OtherGrid4"]
+margin_right = 29.0
+margin_bottom = 31.0
 size_flags_horizontal = 0
 script = ExtResource( 9 )
 
+[node name="VSeparator" type="VSeparator" parent="set/SettingScroll/SettingGrid/OtherGrid4"]
+margin_left = 33.0
+margin_right = 37.0
+margin_bottom = 31.0
+
+[node name="l_long_click" type="Label" parent="set/SettingScroll/SettingGrid/OtherGrid4"]
+margin_left = 41.0
+margin_right = 123.0
+margin_bottom = 31.0
+text = "Click & Hold 
+Time to Pan "
+
+[node name="s_long_click" type="SpinBox" parent="set/SettingScroll/SettingGrid/OtherGrid4"]
+margin_left = 127.0
+margin_right = 612.0
+margin_bottom = 31.0
+hint_tooltip = "Miliseconds"
+mouse_default_cursor_shape = 9
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 1.0
+max_value = 2000.0
+value = 1.0
+align = 2
+suffix = "ms"
+
 [node name="space" type="Label" parent="set/SettingScroll/SettingGrid"]
-margin_top = 403.0
+margin_top = 368.0
 margin_right = 99.0
-margin_bottom = 417.0
+margin_bottom = 382.0
 text = "    "
 
 [node name="SettEndGrid" type="GridContainer" parent="set"]

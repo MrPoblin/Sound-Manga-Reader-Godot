@@ -45,6 +45,7 @@ func init_reader(chapter, page: int = 0) -> void:
 func _on_Main_resized() -> void:
 	setFont(0.2)
 
+
 var isPaused: bool = false
 func setFont(wait: float, scale: int = Config.config.get_value("controls", "uiScale", 50)) -> void:
 	if (!isPaused):
