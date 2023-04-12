@@ -65,11 +65,16 @@ func initTheme() -> void:
 	var styleboxData = {
 		"Button": ["normal", "pressed", "hover", "disabled"],
 		"LineEdit": ["normal", "read_only"],
-		"HSlider": ["slider", "grabber_area", "grabber_area_highlight"]
+		"HSlider": ["slider", "grabber_area", "grabber_area_highlight"],
+		"TabContainer": ["panel", "tab_bg", "tab_fg"]
 	}
 	for styleType in styleboxData:
 		for styleItem in styleboxData[styleType]:
 			var styleEdit = currentTheme.get_stylebox(styleItem, styleType)
+			if(styleType == "TabContainer" && styleItem == "panel"):
+				styleEdit.bg_color = modulateColor.lightened(0.08)
+				styleEdit.bg_color.a = styleEdit.bg_color.a + 0.78
+				continue
 			styleEdit.modulate_color = modulateColor
 			if(styleItem == "grabber_area_highlight"):
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.1
@@ -77,7 +82,10 @@ func initTheme() -> void:
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.1
 			elif(styleItem == "hover"):
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a - 0.033
-			elif(styleItem == "disabled" || styleItem == "read_only"):
+			elif(styleItem == "disabled" || styleItem == "read_only" || styleItem == "tab_bg"):
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.28
+			elif(styleItem == "tab_fg"):
+				styleEdit.modulate_color = styleEdit.modulate_color.lightened(0.12)
+				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.75
 			currentTheme.set_stylebox(styleItem, styleType, styleEdit)
 	set_theme(currentTheme)
