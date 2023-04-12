@@ -418,7 +418,7 @@ margin_right = 1216.0
 margin_bottom = 309.0
 mouse_default_cursor_shape = 10
 size_flags_vertical = 1
-max_value = 80.0
+max_value = 70.0
 value = 50.0
 
 [node name="l_zoom" type="Label" parent="set/SettingScroll/SettingGrid"]
@@ -497,6 +497,7 @@ text = "    "
 anchor_top = 0.92
 anchor_right = 0.98
 anchor_bottom = 0.995
+mouse_filter = 2
 columns = 4
 
 [node name="SettingSave" type="Button" parent="set/SettEndGrid"]
