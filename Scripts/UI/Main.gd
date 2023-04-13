@@ -67,12 +67,13 @@ func initTheme() -> void:
 		"LineEdit": ["normal", "read_only"],
 		"HSlider": ["slider", "grabber_area", "grabber_area_highlight"],
 		"TabContainer": ["panel", "tab_bg", "tab_fg"],
-		"WindowDialog": ["panel"]
+		"WindowDialog": ["panel"],
+		"Tree": ["bg"]
 	}
 	for styleType in styleboxData:
 		for styleItem in styleboxData[styleType]:
 			var styleEdit = currentTheme.get_stylebox(styleItem, styleType)
-			if(styleItem == "panel" || styleItem == "tab_fg"):
+			if(styleItem == "panel" || styleItem == "tab_fg" ):  #|| styleItem == "bg"
 				styleEdit.bg_color = modulateColor.lightened(0.08)
 				styleEdit.bg_color.a = modulateColor.a + 0.8
 				continue
@@ -83,7 +84,7 @@ func initTheme() -> void:
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a - 0.033
 			elif(styleItem == "disabled" || styleItem == "read_only"):
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.28
-			elif(styleItem == "tab_bg"):
+			elif(styleItem == "tab_bg" || styleItem == "bg"):
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.44
 			
 			currentTheme.set_stylebox(styleItem, styleType, styleEdit)
