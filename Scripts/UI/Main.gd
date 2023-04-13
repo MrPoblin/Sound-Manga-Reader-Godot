@@ -66,12 +66,13 @@ func initTheme() -> void:
 		"Button": ["normal", "pressed", "hover", "disabled"],
 		"LineEdit": ["normal", "read_only"],
 		"HSlider": ["slider", "grabber_area", "grabber_area_highlight"],
-		"TabContainer": ["panel", "tab_bg", "tab_fg"]
+		"TabContainer": ["panel", "tab_bg", "tab_fg"],
+		"WindowDialog": ["panel"]
 	}
 	for styleType in styleboxData:
 		for styleItem in styleboxData[styleType]:
 			var styleEdit = currentTheme.get_stylebox(styleItem, styleType)
-			if(styleType == "TabContainer" && styleItem == "panel" || styleItem == "tab_fg"):
+			if(styleItem == "panel" || styleItem == "tab_fg"):
 				styleEdit.bg_color = modulateColor.lightened(0.08)
 				styleEdit.bg_color.a = modulateColor.a + 0.8
 				continue
