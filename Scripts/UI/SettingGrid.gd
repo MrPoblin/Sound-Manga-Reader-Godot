@@ -76,7 +76,7 @@ func _on_SettingSave_pressed():
 	Config.config.set_value("controls", "mipmaps", $OtherGrid/c_use_mipmaps.pressed)
 	Config.config.set_value("controls", "mouseScheme", $OtherGrid4/op_scheme.get_selected())
 	Config.config.set_value("controls", "onTop", $OtherGrid3/c_on_top.pressed)
-	Config.config.set_value("controls", "uiScale", 100 - $s_ui_scale.value)
+	Config.config.set_value("controls", "uiScale", $s_ui_scale.value)
 	Config.config.save("user://config.cfg")
 	update_values()
 	get_tree().reload_current_scene()
@@ -112,7 +112,7 @@ func separate() -> void:
 var scaleChanged:bool = false
 func _on_s_ui_scale_value_changed(value):
 	var MainNode = get_tree().get_root().get_node("Main")
-	MainNode.setFont(0.1, 100 - value)
+	MainNode.setFont(0.15, value)
 	scaleChanged = true
 
 var isRunning:bool = false
