@@ -69,12 +69,13 @@ func initTheme() -> void:
 		"TabContainer": ["panel", "tab_bg", "tab_fg"],
 		"WindowDialog": ["panel"],
 		"Tree": ["bg"],
-		"PopupPanel": ["panel"]
+		"PopupPanel": ["panel"],
+		"PopupMenu": ["panel"]
 	}
 	for styleType in styleboxData:
 		for styleItem in styleboxData[styleType]:
 			var styleEdit = currentTheme.get_stylebox(styleItem, styleType)
-			print(styleEdit)
+
 			if((styleItem == "panel"|| styleItem == "tab_fg") && styleEdit is StyleBoxFlat):  #|| styleItem == "bg"
 				styleEdit.bg_color = modulateColor.lightened(0.08)
 				styleEdit.bg_color.a = modulateColor.a + 0.8
@@ -86,7 +87,7 @@ func initTheme() -> void:
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a - 0.033
 			elif(styleItem == "disabled" || styleItem == "read_only" ):
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.28
-			elif(styleItem == "tab_bg"|| styleItem == "bg"):
+			elif(styleItem == "tab_bg"|| styleItem == "bg" || (styleItem == "panel" && styleType == "PopupMenu")):
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.44
 			elif(styleItem == "panel"):
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.804
