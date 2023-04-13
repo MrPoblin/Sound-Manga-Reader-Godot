@@ -248,7 +248,7 @@ margin_top = 202.0
 margin_right = 99.0
 margin_bottom = 250.0
 text = "Main Menu
-
+Color
 "
 
 [node name="ColorGrid" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
@@ -274,7 +274,7 @@ margin_bottom = 31.0
 margin_left = 95.0
 margin_right = 138.0
 margin_bottom = 31.0
-text = " Side 
+text = " Menu
  Panel "
 
 [node name="cp_panel" type="ColorPickerButton" parent="set/SettingScroll/SettingGrid/ColorGrid"]
