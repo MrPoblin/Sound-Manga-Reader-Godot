@@ -104,7 +104,7 @@ func _on_s_voice_value_changed(value):
 func separate() -> void:
 	var childNum: int = self.get_child_count()
 	var children = self.get_children()
-	var num: int = 0
+	var num: int = 1
 	for child in children:
 		if(num == 2):
 			var newSep = HSeparator.new()

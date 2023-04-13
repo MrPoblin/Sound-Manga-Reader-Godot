@@ -20,13 +20,7 @@ func initConfig():
 	config.set_value("controls", "onTop", false)
 	config.set_value("controls", "uiScale", 51)
 	config.set_value("color", "bind", true)
-	randomize()
-	var tempCol = Color(randf(),randf(),randf(), 1.05)*0.9
-	config.set_value("color", "main", tempCol)
-	if(tempCol.get_luminance()>0.5):
-		config.set_value("color", "panel", tempCol.darkened((tempCol.get_luminance()-0.5)*0.24))
-	else:
-		config.set_value("color", "panel", tempCol.lightened(tempCol.get_luminance()*0.24))
+	randomizeColors()
 	config.set_value("color", "bg", Color.black)
 	saveConfig()
 
@@ -53,3 +47,12 @@ func load_bus(id, linear):
 		AudioServer.set_bus_volume_db(id, 20 * (log(linear)/log(10)))
 	else: 
 		AudioServer.set_bus_mute(id, true)
+
+func randomizeColors() -> void:
+	randomize()
+	var tempCol = Color(randf(),randf(),randf(), 1.05)*0.9
+	config.set_value("color", "main", tempCol)
+	if(tempCol.get_luminance()>0.5):
+		config.set_value("color", "panel", tempCol.darkened((tempCol.get_luminance()-0.5)*0.24))
+	else:
+		config.set_value("color", "panel", tempCol.lightened(tempCol.get_luminance()*0.24))
