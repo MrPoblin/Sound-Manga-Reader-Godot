@@ -418,8 +418,10 @@ margin_right = 1216.0
 margin_bottom = 309.0
 mouse_default_cursor_shape = 10
 size_flags_vertical = 1
-max_value = 80.0
+min_value = 25.0
+max_value = 155.0
 value = 50.0
+exp_edit = true
 
 [node name="l_zoom" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 314.0

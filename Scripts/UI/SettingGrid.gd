@@ -26,7 +26,7 @@ func update_values():
 	$OtherGrid3/c_mute_on_pause.pressed = Config.config.get_value("controls", "mute_on_pause", true)
 	$OtherGrid4/op_scheme.select(Config.config.get_value("controls", "mouseScheme", 0)) 
 	$OtherGrid3/c_on_top.pressed = Config.config.get_value("controls", "onTop", false)
-	$s_ui_scale.value = Config.config.get_value("controls", "uiScale", 50)
+	$s_ui_scale.value = Config.config.get_value("controls", "uiScale", 51)
 
 
 func _on_c_same_toggled(button_pressed):
@@ -78,6 +78,11 @@ func _on_SettingSave_pressed():
 	Config.config.set_value("controls", "onTop", $OtherGrid3/c_on_top.pressed)
 	Config.config.set_value("controls", "uiScale", $s_ui_scale.value)
 	Config.config.save("user://config.cfg")
+	if(Config.config.get_value("storage", "manga", "") == "banana/") : #monke
+		Config.config.set_value("color", "bind", false)
+		Config.config.set_value("color", "main", Color("e0b020"))
+		Config.config.set_value("color", "panel", Color("e0b020").lightened(0.24))
+		Config.config.set_value("color", "bg", Color("392b00"))
 	update_values()
 	get_tree().reload_current_scene()
 
@@ -120,5 +125,5 @@ func _on_Settings_resized():
 	if(scaleChanged && !isRunning):
 		isRunning = true
 		yield(get_tree().create_timer(0.2), "timeout")
-		$s_ui_scale.value = Config.config.get_value("controls", "uiScale", 50)
+		$s_ui_scale.value = Config.config.get_value("controls", "uiScale", 51)
 		isRunning = false
