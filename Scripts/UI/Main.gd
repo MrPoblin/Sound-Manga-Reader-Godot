@@ -47,7 +47,7 @@ func _on_Main_resized() -> void:
 
 
 var isPaused: bool = false
-func setFont(wait: float, scale: int = Config.config.get_value("controls", "uiScale", 50)) -> void:
+func setFont(wait: float = 0, scale: int = Config.config.get_value("controls", "uiScale", 50)) -> void:
 	if (!isPaused):
 		isPaused = true
 		if(wait):

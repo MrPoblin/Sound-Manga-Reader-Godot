@@ -109,6 +109,16 @@ func separate() -> void:
 			num = 0
 		num += 1
 
+var scaleChanged:bool = false
 func _on_s_ui_scale_value_changed(value):
 	var MainNode = get_tree().get_root().get_node("Main")
 	MainNode.setFont(0.1, 100 - value)
+	scaleChanged = true
+
+var isRunning:bool = false
+func _on_Settings_resized():
+	if(scaleChanged && !isRunning):
+		isRunning = true
+		yield(get_tree().create_timer(0.2), "timeout")
+		$s_ui_scale.value = Config.config.get_value("controls", "uiScale", 50)
+		isRunning = false
