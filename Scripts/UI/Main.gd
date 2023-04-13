@@ -86,6 +86,6 @@ func initTheme() -> void:
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.28
 			elif(styleItem == "tab_fg"):
 				styleEdit.modulate_color = styleEdit.modulate_color.lightened(0.12)
-				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.75
+				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.78
 			currentTheme.set_stylebox(styleItem, styleType, styleEdit)
 	set_theme(currentTheme)
