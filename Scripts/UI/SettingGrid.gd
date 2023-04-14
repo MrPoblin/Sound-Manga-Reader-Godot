@@ -3,7 +3,7 @@ extends GridContainer
 
 func _ready():
 	update_values()
-#	separate()
+	separate()
 
 
 func update_values():

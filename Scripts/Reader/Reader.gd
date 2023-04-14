@@ -11,7 +11,7 @@ onready var swapLR:bool = Config.config.get_value("controls", "swapLR")
 onready var prevBgm
 onready var prevSfx
 onready var autoResize:bool = Config.config.get_value("controls", "auto_resize")
-onready var longClick:float = Config.config.get_value("controls", "long_click")
+onready var longClick:float = Config.config.get_value("controls", "long_click", 0.17)
 onready var mouseScheme:int = Config.config.get_value("controls", "mouseScheme", 0)
 var mousePos:Vector2
 var signal_received:bool = false

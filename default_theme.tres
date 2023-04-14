@@ -154,7 +154,7 @@ margin_left = 3.0
 margin_right = 3.0
 margin_top = 3.0
 margin_bottom = 3.0
-modulate_color = Color( 1, 1, 1, 0.392157 )
+modulate_color = Color( 1, 1, 1, 0.352941 )
 
 [sub_resource type="Image" id=126]
 data = {
