@@ -44,3 +44,6 @@ func _on_resume_button_gui_input(event):
 	if (event is InputEventMouseButton && event.button_index == BUTTON_MIDDLE && !event.is_pressed()):
 		$MainMenuButtons/resume_button.visible = false
 		State.clearState()
+
+func _on_credits_button_pressed():
+	$CreditsPopup.popup()
