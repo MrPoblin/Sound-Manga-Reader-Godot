@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/UI/MangaList.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/Settings.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/UI/C_Panel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/UI/Credits.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/UI/Settings.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/UI/exit_button.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/UI/C_Main.gd" type="Script" id=6]
@@ -109,14 +109,7 @@ anchor_top = 0.05
 anchor_right = 1.0
 anchor_bottom = 0.95
 
-[node name="C_Panel" parent="CreditsPopup" instance=ExtResource( 3 )]
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CreditsPopup"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-bbcode_enabled = true
-bbcode_text = "[b]bold[/b]"
-text = "bold"
+[node name="Credits" parent="CreditsPopup" instance=ExtResource( 3 )]
 
 [node name="Title" type="HBoxContainer" parent="."]
 anchor_left = 0.05

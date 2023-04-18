@@ -15,7 +15,7 @@ anchor_bottom = 1.0
 [node name="C_Panel" parent="." instance=ExtResource( 5 )]
 
 [node name="set" type="Control" parent="."]
-anchor_left = 0.03
+anchor_left = 0.025
 anchor_top = 0.02
 anchor_right = 1.0
 anchor_bottom = 0.99
@@ -37,7 +37,7 @@ anchor_right = 0.98
 anchor_bottom = 0.975
 
 [node name="SettingGrid" type="GridContainer" parent="set/SettingScroll"]
-margin_right = 1216.77
+margin_right = 1223.04
 margin_bottom = 343.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 1
@@ -54,7 +54,7 @@ text = "Manga Location"
 [node name="le_storage_manga" type="LineEdit" parent="set/SettingScroll/SettingGrid"]
 unique_name_in_owner = true
 margin_left = 119.0
-margin_right = 1216.0
+margin_right = 1223.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 
@@ -68,7 +68,7 @@ text = "Music Location"
 unique_name_in_owner = true
 margin_left = 119.0
 margin_top = 25.0
-margin_right = 1216.0
+margin_right = 1223.0
 margin_bottom = 49.0
 size_flags_horizontal = 3
 
@@ -81,7 +81,7 @@ text = "Same Location"
 [node name="LocationGrid" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
 margin_top = 50.0
-margin_right = 1216.0
+margin_right = 1223.0
 margin_bottom = 74.0
 rect_clip_content = true
 columns = 5
@@ -98,22 +98,22 @@ margin_bottom = 24.0
 size_flags_horizontal = 2
 
 [node name="Label" type="Label" parent="set/SettingScroll/SettingGrid/LocationGrid"]
-margin_left = 823.0
+margin_left = 830.0
 margin_top = 5.0
-margin_right = 870.0
+margin_right = 877.0
 margin_bottom = 19.0
 text = "Select: "
 
 [node name="man_but_sel" type="Button" parent="set/SettingScroll/SettingGrid/LocationGrid"]
-margin_left = 874.0
-margin_right = 985.0
+margin_left = 881.0
+margin_right = 992.0
 margin_bottom = 24.0
 mouse_default_cursor_shape = 2
 text = "Manga Location"
 
 [node name="mus_but_sel" type="Button" parent="set/SettingScroll/SettingGrid/LocationGrid"]
-margin_left = 989.0
-margin_right = 1097.0
+margin_left = 996.0
+margin_right = 1104.0
 margin_bottom = 24.0
 mouse_default_cursor_shape = 2
 text = "Music Location"
@@ -127,7 +127,7 @@ text = "Master Volume"
 [node name="s_master" type="HSlider" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
 margin_top = 75.0
-margin_right = 1216.0
+margin_right = 1223.0
 margin_bottom = 91.0
 mouse_default_cursor_shape = 10
 size_flags_vertical = 1
@@ -144,7 +144,7 @@ text = "Music Volume"
 [node name="s_music" type="HSlider" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
 margin_top = 92.0
-margin_right = 1216.0
+margin_right = 1223.0
 margin_bottom = 108.0
 mouse_default_cursor_shape = 10
 size_flags_vertical = 1
@@ -161,7 +161,7 @@ text = "SFX Volume"
 [node name="s_sfx" type="HSlider" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
 margin_top = 109.0
-margin_right = 1216.0
+margin_right = 1223.0
 margin_bottom = 125.0
 mouse_default_cursor_shape = 10
 size_flags_vertical = 1
@@ -178,7 +178,7 @@ text = "Voice Volume"
 [node name="s_voice" type="HSlider" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
 margin_top = 126.0
-margin_right = 1216.0
+margin_right = 1223.0
 margin_bottom = 142.0
 mouse_default_cursor_shape = 10
 size_flags_vertical = 1
@@ -196,7 +196,7 @@ Navigation"
 [node name="OtherGrid" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
 margin_top = 143.0
-margin_right = 1216.0
+margin_right = 1223.0
 margin_bottom = 174.0
 columns = 7
 
@@ -254,7 +254,7 @@ Color
 [node name="ColorGrid" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
 margin_top = 175.0
-margin_right = 1216.0
+margin_right = 1223.0
 margin_bottom = 230.0
 columns = 7
 script = ExtResource( 7 )
@@ -360,7 +360,7 @@ Panel Colors"
 [node name="OtherGrid3" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
 margin_top = 231.0
-margin_right = 1216.0
+margin_right = 1223.0
 margin_bottom = 262.0
 columns = 7
 
@@ -414,7 +414,7 @@ text = "UI Scale"
 [node name="s_ui_scale" type="HSlider" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
 margin_top = 263.0
-margin_right = 1216.0
+margin_right = 1223.0
 margin_bottom = 279.0
 mouse_default_cursor_shape = 10
 size_flags_vertical = 1
@@ -432,7 +432,7 @@ text = "Zoom Step"
 [node name="s_zoom" type="HSlider" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
 margin_top = 280.0
-margin_right = 1216.0
+margin_right = 1223.0
 margin_bottom = 296.0
 mouse_default_cursor_shape = 10
 size_flags_vertical = 1
@@ -451,7 +451,7 @@ Scheme"
 [node name="OtherGrid4" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
 margin_left = 119.0
 margin_top = 297.0
-margin_right = 1216.0
+margin_right = 1223.0
 margin_bottom = 328.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -477,7 +477,7 @@ Time to Pan "
 
 [node name="s_long_click" type="SpinBox" parent="set/SettingScroll/SettingGrid/OtherGrid4"]
 margin_left = 127.0
-margin_right = 612.0
+margin_right = 616.0
 margin_bottom = 31.0
 mouse_default_cursor_shape = 9
 size_flags_horizontal = 3
@@ -525,14 +525,14 @@ window_title = "Discard Changes?"
 
 [node name="endSpace" type="Control" parent="set/SettEndGrid"]
 margin_left = 205.0
-margin_right = 1132.0
+margin_right = 1139.0
 margin_bottom = 52.0
 mouse_filter = 2
 size_flags_horizontal = 3
 
 [node name="SettingReset" type="Button" parent="set/SettEndGrid"]
-margin_left = 1136.0
-margin_right = 1216.0
+margin_left = 1143.0
+margin_right = 1223.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 80, 0 )
 mouse_default_cursor_shape = 2

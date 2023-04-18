@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "ColorRect",
+"class": "ColoredPanel",
+"language": "GDScript",
+"path": "res://Scripts/UI/C_Panel.gd"
+} ]
+_global_script_class_icons={
+"ColoredPanel": ""
+}
+
 [application]
 
 config/name="Sound Manga Reader Godot"
