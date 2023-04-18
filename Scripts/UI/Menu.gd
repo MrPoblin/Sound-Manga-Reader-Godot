@@ -13,6 +13,7 @@ func _on_controls_button_pressed():
 
 func _on_Menu_resized():
 	$Popup.visible = false
+	$CreditsPopup.visible = false
 
 func _input(event):
 	if event is InputEventKey:

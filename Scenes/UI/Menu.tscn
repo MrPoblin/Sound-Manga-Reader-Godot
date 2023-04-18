@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/UI/MangaList.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/Settings.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scripts/UI/C_Main.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/UI/Menu.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/UI/Controls_help.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/icon_outlined.png" type="Texture" id=9]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -33,9 +34,9 @@ script = ExtResource( 4 )
 
 [node name="MainMenuButtons" type="VBoxContainer" parent="."]
 anchor_left = 0.08
-anchor_top = 0.2
+anchor_top = 0.28
 anchor_right = 0.22
-anchor_bottom = 0.5
+anchor_bottom = 0.656
 
 [node name="resume_button" type="Button" parent="MainMenuButtons"]
 visible = false
@@ -111,8 +112,39 @@ anchor_bottom = 0.95
 [node name="C_Panel" parent="CreditsPopup" instance=ExtResource( 3 )]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CreditsPopup"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+bbcode_enabled = true
+bbcode_text = "[b]bold[/b]"
+text = "bold"
+
+[node name="Title" type="HBoxContainer" parent="."]
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.25
+anchor_bottom = 0.2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Title"]
+margin_top = 29.0
+margin_right = 136.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+text = "Sound Manga Reader "
+align = 2
+valign = 1
+
+[node name="TitleLogo" type="TextureRect" parent="Title"]
+margin_left = 140.0
+margin_right = 256.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 24, 24 )
+rect_pivot_offset = Vector2( 11.036, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
 
 [connection signal="resized" from="." to="." method="_on_Menu_resized"]
 [connection signal="visibility_changed" from="." to="." method="_on_Menu_visibility_changed"]

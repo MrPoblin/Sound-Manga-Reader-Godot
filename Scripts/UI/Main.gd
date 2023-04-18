@@ -56,7 +56,7 @@ func setFont(wait: float = 0, scale: int = Config.config.get_value("controls", "
 		var newFont: int = int(sqrt(get_viewport_rect().size.y*get_viewport_rect().size.x)/(scale))
 		if(font.size != newFont):
 			font.size = newFont
-			font.outline_size = newFont/18
+			font.outline_size = newFont/17
 
 func initTheme() -> void:
 	var modulateColor:Color = Config.config.get_value("color", "panel")
