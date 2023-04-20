@@ -11,9 +11,3 @@ func _on_SpaceGroteskMedium_pressed():
 	$FontPopup.popup()
 	$FontPopup/ScrollContainer/OFL.text = load_text("res://Licenses/SpaceGrotesk-Medium.txt")
 
-func _on_CreditsContainer_resized():
-	print(get_viewport_rect())
-
-
-func _on_Credits_resized():
-	print(get_viewport_rect())

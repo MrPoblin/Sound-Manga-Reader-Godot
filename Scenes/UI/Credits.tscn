@@ -71,5 +71,4 @@ margin_right = 75.0
 margin_bottom = 14.0
 text = "afawegaewg"
 
-[connection signal="resized" from="." to="CreditsContainer" method="_on_Credits_resized"]
 [connection signal="pressed" from="CreditsContainer/SpaceGrotesk-Medium" to="CreditsContainer" method="_on_SpaceGroteskMedium_pressed"]
