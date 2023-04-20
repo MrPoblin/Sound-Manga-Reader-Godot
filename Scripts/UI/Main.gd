@@ -70,7 +70,8 @@ func initTheme() -> void:
 		"WindowDialog": ["panel"],
 		"Tree": ["bg"],
 		"PopupPanel": ["panel"],
-		"PopupMenu": ["panel"]
+		"PopupMenu": ["panel"],
+		"PopupDialog": ["panel"]
 	}
 	for styleType in styleboxData:
 		for styleItem in styleboxData[styleType]:
@@ -87,7 +88,7 @@ func initTheme() -> void:
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a - 0.033
 			elif(styleItem == "disabled" || styleItem == "read_only" ):
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.28
-			elif(styleItem == "tab_bg"|| styleItem == "bg" || (styleItem == "panel" && styleType == "PopupMenu")):
+			elif(styleItem == "tab_bg"|| styleItem == "bg" || (styleItem == "panel" && (styleType == "PopupMenu" || styleType == "PopupDialog"))):
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.44
 			elif(styleItem == "panel"):
 				styleEdit.modulate_color.a = styleEdit.modulate_color.a + 0.804
