@@ -11,9 +11,16 @@ func _on_settings_button_pressed():
 func _on_controls_button_pressed():
 	$Popup.popup()
 
+var isRunning = false
 func _on_Menu_resized():
-	$Popup.visible = false #Might use node groups
-	$CreditsPopup.visible = false
+	if(!isRunning):
+		isRunning = true
+		$CreditsPopup/Credits/CreditsContainer.hide_popup()
+		var popup_nodes = get_tree().get_nodes_in_group("popup")
+		for i in popup_nodes:
+			i.visible = false
+		yield(get_tree().create_timer(0.4), "timeout")
+		isRunning = false
 
 func _input(event):
 	if event is InputEventKey:
