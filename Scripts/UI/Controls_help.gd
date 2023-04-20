@@ -1,9 +1,6 @@
 extends TabContainer
 
 func _ready():
-#	var my_style = StyleBoxFlat.new()
-#	my_style.bg_color = (Config.config.get_value("color", "panel", Color.black.lightened(0.12)).lightened(0.08))
-#	add_stylebox_override ("panel", my_style)
 	if(Config.config.get_value("controls", "swapLR", false)):
 		$"Keyboard Controls/kb_grid/next_page".text += ", 'left', 'a'"
 		$"Keyboard Controls/kb_grid/prev_page".text += ", 'right', 'd'"

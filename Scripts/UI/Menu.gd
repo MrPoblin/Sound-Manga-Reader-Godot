@@ -12,7 +12,7 @@ func _on_controls_button_pressed():
 	$Popup.popup()
 
 func _on_Menu_resized():
-	$Popup.visible = false
+	$Popup.visible = false #Might use node groups
 	$CreditsPopup.visible = false
 
 func _input(event):

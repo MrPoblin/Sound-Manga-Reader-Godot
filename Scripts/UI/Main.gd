@@ -75,7 +75,7 @@ func initTheme() -> void:
 	for styleType in styleboxData:
 		for styleItem in styleboxData[styleType]:
 			var styleEdit = currentTheme.get_stylebox(styleItem, styleType)
-
+			
 			if((styleItem == "panel"|| styleItem == "tab_fg") && styleEdit is StyleBoxFlat):
 				styleEdit.bg_color = modulateColor#.lightened(0.08)
 				styleEdit.bg_color.a = modulateColor.a + 0.8

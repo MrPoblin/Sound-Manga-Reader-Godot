@@ -70,7 +70,6 @@ size_flags_horizontal = 3
 text = "Controls"
 
 [node name="credits_button" type="Button" parent="MainMenuButtons"]
-visible = false
 margin_top = 72.0
 margin_right = 179.0
 margin_bottom = 92.0
@@ -79,9 +78,9 @@ size_flags_horizontal = 3
 text = "Credits"
 
 [node name="exit_button" type="Button" parent="MainMenuButtons"]
-margin_top = 72.0
+margin_top = 96.0
 margin_right = 179.0
-margin_bottom = 92.0
+margin_bottom = 116.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 text = "Exit"
@@ -103,7 +102,7 @@ margin_bottom = 14.0
 text = "Manga not found!
 Check the 'Manga Location' setting!"
 
-[node name="CreditsPopup" type="Popup" parent="."]
+[node name="CreditsPopup" type="Popup" parent="." groups=["Popups"]]
 anchor_left = 0.38
 anchor_top = 0.05
 anchor_right = 1.0
