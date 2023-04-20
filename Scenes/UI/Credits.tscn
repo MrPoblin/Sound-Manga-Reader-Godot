@@ -38,7 +38,7 @@ margin_top = 72.0
 margin_right = 736.0
 margin_bottom = 92.0
 mouse_default_cursor_shape = 2
-text = "SpaceGrotesk-Medium"
+text = "SpaceGrotesk-Medium Font"
 
 [node name="Separator" type="HSeparator" parent="CreditsContainer" index="4"]
 margin_top = 96.0
