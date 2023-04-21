@@ -52,7 +52,7 @@ custom_constants/separation = 40
 [node name="LogoGodot" type="TextureButton" parent="CreditsContainer" index="5"]
 margin_top = 140.0
 margin_right = 736.0
-margin_bottom = 705.0
+margin_bottom = 420.0
 hint_tooltip = "https://godotengine.org"
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3
@@ -64,20 +64,22 @@ texture_focused = ExtResource( 2 )
 expand = true
 stretch_mode = 4
 
-[node name="FontPopup" type="PopupDialog" parent="CreditsContainer" index="6" groups=["popup"]]
+[node name="end" type="Label" parent="CreditsContainer" index="6"]
+margin_top = 424.0
+margin_right = 736.0
+margin_bottom = 705.0
+size_flags_vertical = 3
+
+[node name="FontPopup" type="PopupDialog" parent="CreditsContainer" index="7" groups=["popup"]]
 anchor_left = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 240.0
-margin_top = -14.4
-margin_right = 240.0
-margin_bottom = -14.4
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CreditsContainer/FontPopup" index="0"]
-anchor_left = 0.01
-anchor_top = 0.01
-anchor_right = 0.99
-anchor_bottom = 0.99
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
 
 [node name="OFL" type="Label" parent="CreditsContainer/FontPopup/ScrollContainer" index="0"]
 margin_right = 75.0
