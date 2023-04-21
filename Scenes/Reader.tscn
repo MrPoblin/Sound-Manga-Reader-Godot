@@ -40,6 +40,7 @@ bus = "Voice"
 one_shot = true
 
 [node name="HelpPopup" type="Popup" parent="."]
+rect_clip_content = true
 
 [node name="Controls_help" parent="HelpPopup" instance=ExtResource( 4 )]
 
