@@ -15,15 +15,17 @@ func hide_popup():
 func _on_project_repository_pressed():
 	OS.shell_open("https://github.com/MrPoblin/Sound-Manga-Reader-Godot")
 
+func _on_og_project_pressed():
+	OS.shell_open("https://gitlab.com/papjul/sound-manga-reader/")
+
+func _on_kenney_uipack_pressed():
+	OS.shell_open("https://kenney.nl/assets/ui-pack/")
+
 func _on_SpaceGroteskMedium_pressed():
 	$FontPopup.popup()
 	$FontPopup/ScrollContainer/OFL.text = load_text("res://Licenses/SpaceGrotesk-Medium.txt")
 
-func _on_og_project_pressed():
-	OS.shell_open("https://gitlab.com/papjul/sound-manga-reader/")
 
 func _on_LogoGodot_pressed():
 	OS.shell_open("https://godotengine.org/")
 
-func _on_kenney_uipack_pressed():
-	OS.shell_open("https://kenney.nl/")
