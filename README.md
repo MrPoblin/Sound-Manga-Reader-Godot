@@ -20,7 +20,7 @@ All of the Umineko manga packs should be supported (though the audio packs need 
 
 ## Screenshots
 
-![Manga List](https://raw.githubusercontent.com/MrPoblin/screenshots/main/Sound-Manga-Reader-Godot/smrg_1.png)
-![Chapter List](https://raw.githubusercontent.com/MrPoblin/screenshots/main/Sound-Manga-Reader-Godot/smrg_2.png)
-![Reader](https://raw.githubusercontent.com/MrPoblin/screenshots/main/Sound-Manga-Reader-Godot/smrg_3.png)
-![Settings](https://raw.githubusercontent.com/MrPoblin/screenshots/main/Sound-Manga-Reader-Godot/smrg_4.png)
+![Manga List](https://raw.githubusercontent.com/MrPoblin/screenshots/main/Sound-Manga-Reader-Godot/v20230421/smrg_1.png)
+![Chapter List](https://raw.githubusercontent.com/MrPoblin/screenshots/main/Sound-Manga-Reader-Godot/v20230421/smrg_2.png)
+![Reader](https://raw.githubusercontent.com/MrPoblin/screenshots/main/Sound-Manga-Reader-Godot/v20230421/smrg_3.png)
+![Settings](https://raw.githubusercontent.com/MrPoblin/screenshots/main/Sound-Manga-Reader-Godot/v20230421/smrg_4.png)
