@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/UI/ChapterList.gd" type="Script" id=1]
 [ext_resource path="res://Assets/arrowLeft.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/UI/BackButton.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/UI/C_Panel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/UI/Artist.gd" type="Script" id=5]
 
 [node name="ChapterSelect" type="Control"]
 anchor_right = 1.0
@@ -32,5 +33,14 @@ mouse_default_cursor_shape = 2
 icon = ExtResource( 2 )
 script = ExtResource( 3 )
 
+[node name="Artist" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.025
+align = 2
+script = ExtResource( 5 )
+
 [connection signal="visibility_changed" from="ChapterContainer/ChapterList" to="ChapterContainer/ChapterList" method="_on_ChapterList_visibility_changed"]
+[connection signal="visibility_changed" from="ChapterContainer/ChapterList" to="Artist" method="_on_ChapterList_visibility_changed"]
 [connection signal="pressed" from="BackButton" to="BackButton" method="_on_BackButton_pressed"]
