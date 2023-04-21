@@ -40,6 +40,7 @@ text = "Kenney UI Pack"
 margin_top = 72.0
 margin_right = 736.0
 margin_bottom = 92.0
+hint_tooltip = "SIL OPEN FONT LICENSE Version 1.1"
 mouse_default_cursor_shape = 2
 text = "SpaceGrotesk-Medium Font"
 
