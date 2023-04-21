@@ -9,12 +9,12 @@
 [node name="CreditsContainer" type="VBoxContainer" parent="." index="0"]
 anchor_left = 0.025
 anchor_top = 0.02
-anchor_right = 0.6
+anchor_right = 0.62
 anchor_bottom = 1.0
 script = ExtResource( 3 )
 
 [node name="project_repository" type="Button" parent="CreditsContainer" index="0"]
-margin_right = 736.0
+margin_right = 761.0
 margin_bottom = 20.0
 hint_tooltip = "https://github.com/MrPoblin/Sound-Manga-Reader-Godot"
 mouse_default_cursor_shape = 2
@@ -22,7 +22,7 @@ text = "Project Repository"
 
 [node name="og_project" type="Button" parent="CreditsContainer" index="1"]
 margin_top = 24.0
-margin_right = 736.0
+margin_right = 761.0
 margin_bottom = 44.0
 hint_tooltip = "https://gitlab.com/papjul/sound-manga-reader"
 mouse_default_cursor_shape = 2
@@ -30,7 +30,7 @@ text = "Original 'Sound Manga Reader' Repository"
 
 [node name="kenney_ui-pack" type="Button" parent="CreditsContainer" index="2"]
 margin_top = 48.0
-margin_right = 736.0
+margin_right = 761.0
 margin_bottom = 68.0
 hint_tooltip = "https://kenney.nl/assets/ui-pack"
 mouse_default_cursor_shape = 2
@@ -38,7 +38,7 @@ text = "Kenney UI Pack"
 
 [node name="SpaceGrotesk-Medium" type="Button" parent="CreditsContainer" index="3"]
 margin_top = 72.0
-margin_right = 736.0
+margin_right = 761.0
 margin_bottom = 92.0
 hint_tooltip = "SIL OPEN FONT LICENSE Version 1.1"
 mouse_default_cursor_shape = 2
@@ -46,13 +46,13 @@ text = "SpaceGrotesk-Medium Font"
 
 [node name="Separator" type="HSeparator" parent="CreditsContainer" index="4"]
 margin_top = 96.0
-margin_right = 736.0
+margin_right = 761.0
 margin_bottom = 136.0
 custom_constants/separation = 40
 
 [node name="LogoGodot" type="TextureButton" parent="CreditsContainer" index="5"]
 margin_top = 140.0
-margin_right = 736.0
+margin_right = 761.0
 margin_bottom = 420.0
 hint_tooltip = "https://godotengine.org"
 mouse_default_cursor_shape = 2
@@ -67,7 +67,7 @@ stretch_mode = 4
 
 [node name="end" type="Label" parent="CreditsContainer" index="6"]
 margin_top = 424.0
-margin_right = 736.0
+margin_right = 761.0
 margin_bottom = 705.0
 size_flags_vertical = 3
 
