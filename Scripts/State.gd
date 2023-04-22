@@ -33,3 +33,4 @@ func saveState():
 func clearState():
 	state.set_value("save", "latest", [])
 	saveState()
+

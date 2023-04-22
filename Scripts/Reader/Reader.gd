@@ -132,9 +132,7 @@ func get_audio(loop, path, file):
 				return get_audio(loop, path, file + "_vorbis")
 			elif(!State.ffmpegChecked):
 				State.ffmpegChecked = true
-				var ffmpegTest:Array
-				OS.execute("ffmpeg", ["ffmpeg", "-version"], true, ffmpegTest)
-				if(ffmpegTest[0].begins_with("ffmpeg version")):
+				if Config.checkFFmpeg("ffmpeg"):
 					Config.config.set_value("storage", "ffmpeg", "ffmpeg")
 					Config.saveConfig()
 					ffmpegPath = "ffmpeg"

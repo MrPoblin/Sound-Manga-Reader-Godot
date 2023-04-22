@@ -503,7 +503,6 @@ margin_right = 1223.0
 margin_bottom = 353.0
 size_flags_horizontal = 3
 placeholder_text = "Get FFmpeg on ffmpeg.org/download.html"
-placeholder_alpha = 0.5
 caret_blink = true
 
 [node name="space" type="Label" parent="set/SettingScroll/SettingGrid"]

@@ -57,3 +57,8 @@ func randomizeColors() -> void:
 		config.set_value("color", "panel", tempCol.darkened((tempCol.get_luminance()-0.5)*0.24))
 	else:
 		config.set_value("color", "panel", tempCol.lightened(tempCol.get_luminance()*0.24))
+
+func checkFFmpeg(path) -> bool: #Probably should check if the installation can do opus to vorbis
+	var ffmpegTest:Array
+	OS.execute(path, ["-version"], true, ffmpegTest)
+	return(ffmpegTest[0].begins_with("ffmpeg version"))

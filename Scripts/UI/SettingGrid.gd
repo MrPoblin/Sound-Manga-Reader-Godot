@@ -58,7 +58,6 @@ func _on_SettingSave_pressed():
 	if(temp):
 		if(temp[temp.length()-1] != '/'):
 			temp += "/"
-	Config.config.set_value("storage", "ffmpeg", $le_ffmpeg.text.replace("\\", "/"))
 	Config.config.set_value("storage", "music", temp)
 	Config.config.set_value("storage", "same", $LocationGrid/c_same.pressed)
 	Config.config.set_value("controls", "swapLR", $OtherGrid/c_swap_lr.pressed)
@@ -86,6 +85,10 @@ func _on_SettingSave_pressed():
 		Config.config.set_value("color", "main", Color("e0b020"))
 		Config.config.set_value("color", "panel", Color("e0b020").lightened(0.24))
 		Config.config.set_value("color", "bg", Color("392b00"))
+	if(Config.config.get_value("storage", "ffmpeg", "") != $le_ffmpeg.text):
+		if Config.checkFFmpeg($le_ffmpeg.text):
+			Config.config.set_value("storage", "ffmpeg", $le_ffmpeg.text.replace("\\", "/"))
+	
 	update_values()
 	get_tree().reload_current_scene()
 
