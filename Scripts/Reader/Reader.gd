@@ -51,12 +51,12 @@ func change_page(num) -> void:
 	$Image.load_image(img, Chapter)
 	$Voice.stop()
 	if(bgm&&bgm!=prevBgm):
-		$Music.set_stream(get_audio(true, MusicPath + "/bgm/" + bgm + ".ogg"))
+		$Music.set_stream(get_audio(true, MusicPath + "/bgm/", bgm))
 		$Music.play()
 	elif(!bgm):
 		$Music.stop()
 	if(voice):
-		$Voice.set_stream(get_audio(false, State.FolderLocation + "/voice/ch-" + Chapter + "/" + img + ".ogg"))
+		$Voice.set_stream(get_audio(false, State.FolderLocation + "/voice/ch-" + Chapter + "/", img))
 		$Voice.play()
 	if(se&&se!=prevSfx):
 		if self.has_node("SFX"):
@@ -67,7 +67,7 @@ func change_page(num) -> void:
 		for id in se:
 			var sfx = AudioStreamPlayer.new()
 			sfx.bus = "SFX"
-			sfx.set_stream(get_audio(true, MusicPath + "/se/" + id + ".ogg"))
+			sfx.set_stream(get_audio(true, MusicPath + "/se/", id))
 			sfx.playing = true
 			$SFX.add_child(sfx)
 	elif(!se):
@@ -115,9 +115,9 @@ func _on_Reader_resized():
 		return
 	$Image.fill_center() #if(autoResize):
 
-func get_audio(loop, path):
+func get_audio(loop, path, file):
 	var ogg_file = File.new()
-	ogg_file.open(path, File.READ)
+	ogg_file.open(path + file + ".ogg", File.READ)
 	var ogg_data = ogg_file.get_buffer(ogg_file.get_len())
 	ogg_file.close()
 	var ogg_stream = AudioStreamOGGVorbis.new()
