@@ -117,11 +117,12 @@ func _on_Reader_resized():
 
 func get_audio(loop, path, file):
 	var ogg_file = File.new()
-	ogg_file.open(path + file + ".ogg", File.READ)
+	if(ogg_file.open(path + file + ".ogg", File.READ) != OK): return null
 	var ogg_data = ogg_file.get_buffer(ogg_file.get_len())
 	ogg_file.close()
 	var ogg_stream = AudioStreamOGGVorbis.new()
 	ogg_stream.data = ogg_data
+	if(!ogg_stream.data.size()):return null
 	if(loop): ogg_stream.loop = true
 	return ogg_stream
 
