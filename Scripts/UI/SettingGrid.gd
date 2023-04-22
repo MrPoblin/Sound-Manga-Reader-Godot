@@ -9,6 +9,7 @@ func _ready():
 func update_values():
 	$le_storage_manga.text = Config.config.get_value("storage", "manga", OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS) + "/")
 	$le_storage_music.text = Config.config.get_value("storage", "music", OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS) + "/")
+	$le_ffmpeg.text = Config.config.get_value("storage", "ffmpeg", "")
 	$s_master.value = clamp(Config.config.get_value("audio", "master", 0.5), 0, 1)
 	$s_music.value = clamp(Config.config.get_value("audio", "music", 0.5), 0, 1)
 	$s_sfx.value = clamp(Config.config.get_value("audio", "sfx", 0.5), 0, 1)
@@ -56,6 +57,7 @@ func _on_SettingSave_pressed():
 	if(temp):
 		if(temp[temp.length()-1] != '/'):
 			temp += "/"
+	Config.config.set_value("storage", "ffmpeg", $le_ffmpeg.text.replace("\\", "/"))
 	Config.config.set_value("storage", "music", temp)
 	Config.config.set_value("storage", "same", $LocationGrid/c_same.pressed)
 	Config.config.set_value("controls", "swapLR", $OtherGrid/c_swap_lr.pressed)

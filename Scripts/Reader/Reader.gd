@@ -13,7 +13,7 @@ onready var prevSfx
 onready var autoResize:bool = Config.config.get_value("controls", "auto_resize")
 onready var longClick:float = Config.config.get_value("controls", "long_click", 0.1)
 onready var mouseScheme:int = Config.config.get_value("controls", "mouseScheme", 0)
-onready var ffmpegPath:String = "ffmpeg"
+onready var ffmpegPath:String = Config.config.get_value("storage", "ffmpeg")
 var mousePos:Vector2
 var signal_received:bool = false
 var doPan:bool
