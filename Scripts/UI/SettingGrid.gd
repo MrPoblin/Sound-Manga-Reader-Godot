@@ -4,6 +4,7 @@ extends GridContainer
 func _ready():
 	update_values()
 	separate()
+	if(OS.get_name() == "X11"): $le_ffmpeg.placeholder_text = "Get FFmpeg with 'sudo apt-get install ffmpeg'"
 
 
 func update_values():

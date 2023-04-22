@@ -130,6 +130,16 @@ func get_audio(loop, path, file):
 			if(ffmpegPath):
 				OS.execute(ffmpegPath, ["-i", path + file + ".ogg", "-y", path + file + "_vorbis.ogg",  "-c:a", "libvorbis"])
 				return get_audio(loop, path, file + "_vorbis")
+			elif(!State.ffmpegChecked):
+				State.ffmpegChecked = true
+				var ffmpegTest:Array
+				OS.execute("ffmpeg", ["ffmpeg", "-version"], true, ffmpegTest)
+				if(ffmpegTest[0].begins_with("ffmpeg version")):
+					Config.config.set_value("storage", "ffmpeg", "ffmpeg")
+					Config.saveConfig()
+					ffmpegPath = "ffmpeg"
+					State.ffmpegChecked = false
+					return get_audio(loop, path, file)
 	if(loop): ogg_stream.loop = true
 	return ogg_stream
 

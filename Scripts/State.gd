@@ -4,6 +4,8 @@ var Core:Dictionary
 var FolderLocation:String
 var Folder:String
 
+var ffmpegChecked:bool = false
+
 var state = ConfigFile.new() #Could be used to save, resume, track which mangas you have read
 
 func _ready():
