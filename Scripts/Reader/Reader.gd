@@ -13,6 +13,7 @@ onready var prevSfx
 onready var autoResize:bool = Config.config.get_value("controls", "auto_resize")
 onready var longClick:float = Config.config.get_value("controls", "long_click", 0.1)
 onready var mouseScheme:int = Config.config.get_value("controls", "mouseScheme", 0)
+onready var ffmpegPath:String = "ffmpeg"
 var mousePos:Vector2
 var signal_received:bool = false
 var doPan:bool
@@ -122,7 +123,13 @@ func get_audio(loop, path, file):
 	ogg_file.close()
 	var ogg_stream = AudioStreamOGGVorbis.new()
 	ogg_stream.data = ogg_data
-	if(!ogg_stream.data.size()):return null
+	if(!ogg_stream.data.size()):
+		if(ogg_file.open(path + file + "_vorbis.ogg", File.READ) == OK): 
+			return get_audio(loop, path, file + "_vorbis")
+		else:
+			if(ffmpegPath):
+				OS.execute(ffmpegPath, ["-i", path + file + ".ogg", "-y", path + file + "_vorbis.ogg",  "-c:a", "libvorbis"])
+				return get_audio(loop, path, file + "_vorbis")
 	if(loop): ogg_stream.loop = true
 	return ogg_stream
 
