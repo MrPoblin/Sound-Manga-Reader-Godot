@@ -567,6 +567,7 @@ window_title = "Reset Settings?"
 
 [connection signal="resized" from="." to="set/SettingScroll/SettingGrid" method="_on_Settings_resized"]
 [connection signal="dir_selected" from="set/SelectLocation" to="set/SelectLocation" method="_on_SelectLocation_dir_selected"]
+[connection signal="visibility_changed" from="set/SettingScroll/SettingGrid" to="set/SettingScroll/SettingGrid" method="_on_SettingGrid_visibility_changed"]
 [connection signal="toggled" from="set/SettingScroll/SettingGrid/LocationGrid/c_same" to="set/SettingScroll/SettingGrid" method="_on_c_same_toggled"]
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/LocationGrid/man_but_sel" to="set/SelectLocation" method="_on_man_but_sel_pressed"]
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/LocationGrid/mus_but_sel" to="set/SelectLocation" method="_on_mus_but_sel_pressed"]

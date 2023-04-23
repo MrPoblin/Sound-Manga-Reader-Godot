@@ -133,3 +133,6 @@ func _on_Settings_resized():
 		yield(get_tree().create_timer(0.2), "timeout")
 		$s_ui_scale.value = Config.config.get_value("controls", "uiScale", 51)
 		isRunning = false
+
+func _on_SettingGrid_visibility_changed():
+	$le_ffmpeg.text = Config.config.get_value("storage", "ffmpeg", "")
