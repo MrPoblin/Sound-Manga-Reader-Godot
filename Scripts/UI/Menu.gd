@@ -22,10 +22,10 @@ func _on_Menu_resized():
 		yield(get_tree().create_timer(0.4), "timeout")
 		isRunning = false
 
-func _input(event):
-	if event is InputEventKey:
-		if event.is_action_pressed("help"):
-			$Popup.popup()
+#func _input(event):
+#	if event is InputEventKey:
+#		if event.is_action_pressed("help"):
+#			$Popup.popup()
 
 func _on_resume_button_pressed():
 	latestSave = State.state.get_value("save", "latest")

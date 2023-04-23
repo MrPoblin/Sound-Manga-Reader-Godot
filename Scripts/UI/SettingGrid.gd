@@ -4,13 +4,13 @@ extends GridContainer
 func _ready():
 	update_values()
 	separate()
-	if(OS.get_name() == "X11"): $le_ffmpeg.placeholder_text = "Get FFmpeg with 'sudo apt-get install ffmpeg'"
+	if(OS.get_name() == "X11"): $"%le_ffmpeg".placeholder_text = "Get FFmpeg with 'sudo apt-get install ffmpeg'"
 
 
 func update_values():
 	$le_storage_manga.text = Config.config.get_value("storage", "manga", OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS) + "/")
 	$le_storage_music.text = Config.config.get_value("storage", "music", OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS) + "/")
-	$le_ffmpeg.text = Config.config.get_value("storage", "ffmpeg", "")
+	$"%le_ffmpeg".text = Config.config.get_value("storage", "ffmpeg", "")
 	$s_master.value = clamp(Config.config.get_value("audio", "master", 0.5), 0, 1)
 	$s_music.value = clamp(Config.config.get_value("audio", "music", 0.5), 0, 1)
 	$s_sfx.value = clamp(Config.config.get_value("audio", "sfx", 0.5), 0, 1)
@@ -85,9 +85,9 @@ func _on_SettingSave_pressed():
 		Config.config.set_value("color", "main", Color("e0b020"))
 		Config.config.set_value("color", "panel", Color("e0b020").lightened(0.24))
 		Config.config.set_value("color", "bg", Color("392b00"))
-	if(Config.config.get_value("storage", "ffmpeg", "") != $le_ffmpeg.text):
-		if Config.checkFFmpeg($le_ffmpeg.text):
-			Config.config.set_value("storage", "ffmpeg", $le_ffmpeg.text.replace("\\", "/"))
+	if(Config.config.get_value("storage", "ffmpeg", "") != $"%le_ffmpeg".text):
+		if Config.checkFFmpeg($"%le_ffmpeg".text):
+			Config.config.set_value("storage", "ffmpeg", $"%le_ffmpeg".text.replace("\\", "/"))
 	
 	update_values()
 	get_tree().reload_current_scene()
@@ -135,4 +135,4 @@ func _on_Settings_resized():
 		isRunning = false
 
 func _on_SettingGrid_visibility_changed():
-	$le_ffmpeg.text = Config.config.get_value("storage", "ffmpeg", "")
+	$"%le_ffmpeg".text = Config.config.get_value("storage", "ffmpeg", "")
