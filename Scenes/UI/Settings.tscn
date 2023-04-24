@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://Scripts/UI/op_ffmpeg.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/UI/SettingGrid.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/UI/SelectLocation.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/UI/C_Panel.tscn" type="PackedScene" id=5]
@@ -38,7 +39,7 @@ anchor_bottom = 0.975
 
 [node name="SettingGrid" type="GridContainer" parent="set/SettingScroll"]
 margin_right = 1223.04
-margin_bottom = 383.0
+margin_bottom = 389.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 1
 custom_constants/hseparation = 20
@@ -462,6 +463,7 @@ columns = 5
 [node name="op_scheme" type="OptionButton" parent="set/SettingScroll/SettingGrid/OtherGrid4"]
 margin_right = 29.0
 margin_bottom = 31.0
+mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 script = ExtResource( 9 )
 
@@ -526,9 +528,9 @@ mouse_default_cursor_shape = 2
 text = "Select"
 
 [node name="l_ffmpeg_behaviour" type="Label" parent="set/SettingScroll/SettingGrid"]
-margin_top = 354.0
+margin_top = 357.0
 margin_right = 108.0
-margin_bottom = 368.0
+margin_bottom = 371.0
 rect_pivot_offset = Vector2( -137, -174.6 )
 text = "FFmpeg Mode"
 
@@ -536,16 +538,22 @@ text = "FFmpeg Mode"
 margin_left = 128.0
 margin_top = 354.0
 margin_right = 1223.0
-margin_bottom = 368.0
+margin_bottom = 374.0
+
+[node name="op_ffmpeg" type="OptionButton" parent="set/SettingScroll/SettingGrid/ffmpeg_container2"]
+margin_right = 29.0
+margin_bottom = 20.0
+mouse_default_cursor_shape = 2
+script = ExtResource( 1 )
 
 [node name="space" type="Label" parent="set/SettingScroll/SettingGrid"]
-margin_top = 369.0
+margin_top = 375.0
 margin_right = 108.0
-margin_bottom = 383.0
+margin_bottom = 389.0
 text = "    "
 
 [node name="SettEndGrid" type="GridContainer" parent="set"]
-anchor_top = 0.92
+anchor_top = 0.925
 anchor_right = 0.98
 anchor_bottom = 0.995
 mouse_filter = 2
@@ -553,7 +561,7 @@ columns = 4
 
 [node name="SettingSave" type="Button" parent="set/SettEndGrid"]
 margin_right = 120.0
-margin_bottom = 52.0
+margin_bottom = 48.0
 rect_min_size = Vector2( 120, 0 )
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3
@@ -562,7 +570,7 @@ text = " SAVE "
 [node name="SettingDiscard" type="Button" parent="set/SettEndGrid"]
 margin_left = 124.0
 margin_right = 201.0
-margin_bottom = 52.0
+margin_bottom = 48.0
 mouse_default_cursor_shape = 2
 text = " DISCARD "
 script = ExtResource( 8 )
@@ -576,14 +584,14 @@ window_title = "Discard Changes?"
 [node name="endSpace" type="Control" parent="set/SettEndGrid"]
 margin_left = 205.0
 margin_right = 1139.0
-margin_bottom = 52.0
+margin_bottom = 48.0
 mouse_filter = 2
 size_flags_horizontal = 3
 
 [node name="SettingReset" type="Button" parent="set/SettEndGrid"]
 margin_left = 1143.0
 margin_right = 1223.0
-margin_bottom = 52.0
+margin_bottom = 48.0
 rect_min_size = Vector2( 80, 0 )
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3

@@ -129,8 +129,13 @@ func get_audio(loop, path, file):
 			return get_audio(loop, path, file + "_vorbis")
 		elif(ffmpegMode != 0):
 			if(ffmpegPath):
-				State.to_vorbis(path + file)
-				return get_audio(loop, path, file + "_vorbis")
+				match ffmpegMode:
+					1:
+						State.to_vorbis(path + file)
+						return get_audio(loop, path, file + "_vorbis")
+					2:
+						State.to_vorbis_replace(path + file)
+						return get_audio(loop, path, file)
 			elif(!State.ffmpegChecked):
 				State.ffmpegChecked = true
 				if Config.checkFFmpeg("ffmpeg"):
