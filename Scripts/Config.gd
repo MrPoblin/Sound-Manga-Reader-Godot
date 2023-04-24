@@ -10,6 +10,7 @@ func initConfig():
 	config.set_value("storage", "manga", OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS) + "/")
 	config.set_value("storage", "music", OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS) + "/")
 	config.set_value("storage", "ffmpeg", "")
+	config.set_value("storage", "ffmpegMode", 1)
 	config.set_value("storage", "same", true)
 	config.set_value("controls", "swapLR", false)
 	config.set_value("controls", "auto_resize", true)

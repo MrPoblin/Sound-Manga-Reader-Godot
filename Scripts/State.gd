@@ -1,14 +1,24 @@
 extends Node
 
+enum SYSTEM {
+	WINDOWS = 1,
+	UNIX = 2
+}
+
 var Core:Dictionary
 var FolderLocation:String
 var Folder:String
+var osType:int
 
 var ffmpegChecked:bool = false
 
 var state = ConfigFile.new() #Could be used to save, resume, track which mangas you have read
 
 func _ready():
+	if(OS.get_name() == "X11" || OS.get_name() == "OSX"):
+		osType = SYSTEM.UNIX
+	elif(OS.get_name() == "Windows"):
+		osType = SYSTEM.WINDOWS
 	var file = File.new()
 	if !file.file_exists("user://save.dat"):
 		state.set_value("save", "latest", [])
@@ -34,3 +44,5 @@ func clearState():
 	state.set_value("save", "latest", [])
 	saveState()
 
+func to_vorbis(path) -> void:
+	OS.execute(Config.config.get_value("storage", "ffmpeg", ""), ["-i", path + ".ogg", path + "_vorbis.ogg",  "-c:a", "libvorbis"])

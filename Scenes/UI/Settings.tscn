@@ -38,7 +38,7 @@ anchor_bottom = 0.975
 
 [node name="SettingGrid" type="GridContainer" parent="set/SettingScroll"]
 margin_right = 1223.04
-margin_bottom = 375.0
+margin_bottom = 383.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 1
 custom_constants/hseparation = 20
@@ -47,13 +47,13 @@ script = ExtResource( 2 )
 
 [node name="l_storage_manga" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 5.0
-margin_right = 99.0
+margin_right = 108.0
 margin_bottom = 19.0
 text = "Manga Location"
 
 [node name="le_storage_manga" type="LineEdit" parent="set/SettingScroll/SettingGrid"]
 unique_name_in_owner = true
-margin_left = 119.0
+margin_left = 128.0
 margin_right = 1223.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
@@ -61,13 +61,13 @@ caret_blink = true
 
 [node name="l_storage_music" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 30.0
-margin_right = 99.0
+margin_right = 108.0
 margin_bottom = 44.0
 text = "Music Location"
 
 [node name="le_storage_music" type="LineEdit" parent="set/SettingScroll/SettingGrid"]
 unique_name_in_owner = true
-margin_left = 119.0
+margin_left = 128.0
 margin_top = 25.0
 margin_right = 1223.0
 margin_bottom = 49.0
@@ -76,12 +76,12 @@ caret_blink = true
 
 [node name="l_isSame" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 55.0
-margin_right = 99.0
+margin_right = 108.0
 margin_bottom = 69.0
 text = "Same Location"
 
 [node name="LocationGrid" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
-margin_left = 119.0
+margin_left = 128.0
 margin_top = 50.0
 margin_right = 1223.0
 margin_bottom = 74.0
@@ -100,34 +100,34 @@ margin_bottom = 24.0
 size_flags_horizontal = 2
 
 [node name="Label" type="Label" parent="set/SettingScroll/SettingGrid/LocationGrid"]
-margin_left = 830.0
+margin_left = 821.0
 margin_top = 5.0
-margin_right = 877.0
+margin_right = 868.0
 margin_bottom = 19.0
 text = "Select: "
 
 [node name="man_but_sel" type="Button" parent="set/SettingScroll/SettingGrid/LocationGrid"]
-margin_left = 881.0
-margin_right = 992.0
+margin_left = 872.0
+margin_right = 983.0
 margin_bottom = 24.0
 mouse_default_cursor_shape = 2
 text = "Manga Location"
 
 [node name="mus_but_sel" type="Button" parent="set/SettingScroll/SettingGrid/LocationGrid"]
-margin_left = 996.0
-margin_right = 1104.0
+margin_left = 987.0
+margin_right = 1095.0
 margin_bottom = 24.0
 mouse_default_cursor_shape = 2
 text = "Music Location"
 
 [node name="l_AudioMaster" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 76.0
-margin_right = 99.0
+margin_right = 108.0
 margin_bottom = 90.0
 text = "Master Volume"
 
 [node name="s_master" type="HSlider" parent="set/SettingScroll/SettingGrid"]
-margin_left = 119.0
+margin_left = 128.0
 margin_top = 75.0
 margin_right = 1223.0
 margin_bottom = 91.0
@@ -139,12 +139,12 @@ ticks_on_borders = true
 
 [node name="l_AudioMusic" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 93.0
-margin_right = 99.0
+margin_right = 108.0
 margin_bottom = 107.0
 text = "Music Volume"
 
 [node name="s_music" type="HSlider" parent="set/SettingScroll/SettingGrid"]
-margin_left = 119.0
+margin_left = 128.0
 margin_top = 92.0
 margin_right = 1223.0
 margin_bottom = 108.0
@@ -156,12 +156,12 @@ ticks_on_borders = true
 
 [node name="l_AudioSfx" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 110.0
-margin_right = 99.0
+margin_right = 108.0
 margin_bottom = 124.0
 text = "SFX Volume"
 
 [node name="s_sfx" type="HSlider" parent="set/SettingScroll/SettingGrid"]
-margin_left = 119.0
+margin_left = 128.0
 margin_top = 109.0
 margin_right = 1223.0
 margin_bottom = 125.0
@@ -173,12 +173,12 @@ ticks_on_borders = true
 
 [node name="l_AudioVoice" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 127.0
-margin_right = 99.0
+margin_right = 108.0
 margin_bottom = 141.0
 text = "Voice Volume"
 
 [node name="s_voice" type="HSlider" parent="set/SettingScroll/SettingGrid"]
-margin_left = 119.0
+margin_left = 128.0
 margin_top = 126.0
 margin_right = 1223.0
 margin_bottom = 142.0
@@ -190,13 +190,13 @@ ticks_on_borders = true
 
 [node name="l_swap_lr" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 143.0
-margin_right = 99.0
+margin_right = 108.0
 margin_bottom = 174.0
 text = "Right to Left
 Navigation"
 
 [node name="OtherGrid" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
-margin_left = 119.0
+margin_left = 128.0
 margin_top = 143.0
 margin_right = 1223.0
 margin_bottom = 174.0
@@ -247,14 +247,14 @@ mouse_default_cursor_shape = 2
 
 [node name="l_color_main" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 178.0
-margin_right = 99.0
+margin_right = 108.0
 margin_bottom = 226.0
 text = "Main Menu
 Color
 "
 
 [node name="ColorGrid" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
-margin_left = 119.0
+margin_left = 128.0
 margin_top = 175.0
 margin_right = 1223.0
 margin_bottom = 230.0
@@ -354,13 +354,13 @@ text = "Randomize"
 
 [node name="l_color_bind" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 231.0
-margin_right = 99.0
+margin_right = 108.0
 margin_bottom = 262.0
 text = "Bind Main and
 Panel Colors"
 
 [node name="OtherGrid3" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
-margin_left = 119.0
+margin_left = 128.0
 margin_top = 231.0
 margin_right = 1223.0
 margin_bottom = 262.0
@@ -409,12 +409,12 @@ mouse_default_cursor_shape = 2
 
 [node name="l_ui_scale" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 264.0
-margin_right = 99.0
+margin_right = 108.0
 margin_bottom = 278.0
 text = "UI Scale"
 
 [node name="s_ui_scale" type="HSlider" parent="set/SettingScroll/SettingGrid"]
-margin_left = 119.0
+margin_left = 128.0
 margin_top = 263.0
 margin_right = 1223.0
 margin_bottom = 279.0
@@ -427,12 +427,12 @@ exp_edit = true
 
 [node name="l_zoom" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 281.0
-margin_right = 99.0
+margin_right = 108.0
 margin_bottom = 295.0
 text = "Zoom Step"
 
 [node name="s_zoom" type="HSlider" parent="set/SettingScroll/SettingGrid"]
-margin_left = 119.0
+margin_left = 128.0
 margin_top = 280.0
 margin_right = 1223.0
 margin_bottom = 296.0
@@ -445,13 +445,13 @@ value = 1.0
 
 [node name="l_scheme" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 297.0
-margin_right = 99.0
+margin_right = 108.0
 margin_bottom = 328.0
 text = "Mouse Control
 Scheme"
 
 [node name="OtherGrid4" type="GridContainer" parent="set/SettingScroll/SettingGrid"]
-margin_left = 119.0
+margin_left = 128.0
 margin_top = 297.0
 margin_right = 1223.0
 margin_bottom = 328.0
@@ -479,7 +479,7 @@ Time to Pan "
 
 [node name="s_long_click" type="SpinBox" parent="set/SettingScroll/SettingGrid/OtherGrid4"]
 margin_left = 127.0
-margin_right = 616.0
+margin_right = 611.0
 margin_bottom = 31.0
 mouse_default_cursor_shape = 9
 size_flags_horizontal = 3
@@ -490,52 +490,58 @@ value = 1.0
 align = 2
 suffix = "ms"
 
-[node name="ffmpeg_container" type="HBoxContainer" parent="set/SettingScroll/SettingGrid"]
+[node name="l_ffmpeg" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 334.0
+margin_right = 108.0
+margin_bottom = 348.0
+text = "FFmpeg Location"
+
+[node name="ffmpeg_container3" type="HBoxContainer" parent="set/SettingScroll/SettingGrid"]
+margin_left = 128.0
 margin_top = 329.0
-margin_right = 99.0
-margin_bottom = 360.0
+margin_right = 1223.0
+margin_bottom = 353.0
 custom_constants/separation = 0
 
-[node name="l_ffmpeg" type="Label" parent="set/SettingScroll/SettingGrid/ffmpeg_container"]
-margin_right = 81.0
-margin_bottom = 31.0
-size_flags_horizontal = 3
-text = "FFmpeg
-Location"
-
-[node name="ffmpeg_help" type="Button" parent="set/SettingScroll/SettingGrid/ffmpeg_container"]
-margin_left = 81.0
-margin_right = 99.0
-margin_bottom = 31.0
+[node name="ffmpeg_help" type="Button" parent="set/SettingScroll/SettingGrid/ffmpeg_container3"]
+margin_right = 18.0
+margin_bottom = 24.0
 mouse_default_cursor_shape = 2
 text = "?"
 
-[node name="ffmpeg_container2" type="HBoxContainer" parent="set/SettingScroll/SettingGrid"]
-margin_left = 119.0
-margin_top = 329.0
-margin_right = 1223.0
-margin_bottom = 360.0
-custom_constants/separation = 0
-
-[node name="le_ffmpeg" type="LineEdit" parent="set/SettingScroll/SettingGrid/ffmpeg_container2"]
+[node name="le_ffmpeg" type="LineEdit" parent="set/SettingScroll/SettingGrid/ffmpeg_container3"]
 unique_name_in_owner = true
-margin_right = 1053.0
-margin_bottom = 31.0
+margin_left = 18.0
+margin_right = 1044.0
+margin_bottom = 24.0
 size_flags_horizontal = 3
 placeholder_text = "Get FFmpeg on ffmpeg.org/download.html"
 caret_blink = true
 
-[node name="ffmpeg_select" type="Button" parent="set/SettingScroll/SettingGrid/ffmpeg_container2"]
-margin_left = 1053.0
-margin_right = 1104.0
-margin_bottom = 31.0
+[node name="ffmpeg_select" type="Button" parent="set/SettingScroll/SettingGrid/ffmpeg_container3"]
+margin_left = 1044.0
+margin_right = 1095.0
+margin_bottom = 24.0
 mouse_default_cursor_shape = 2
 text = "Select"
 
+[node name="l_ffmpeg_behaviour" type="Label" parent="set/SettingScroll/SettingGrid"]
+margin_top = 354.0
+margin_right = 108.0
+margin_bottom = 368.0
+rect_pivot_offset = Vector2( -137, -174.6 )
+text = "FFmpeg Mode"
+
+[node name="ffmpeg_container2" type="HBoxContainer" parent="set/SettingScroll/SettingGrid"]
+margin_left = 128.0
+margin_top = 354.0
+margin_right = 1223.0
+margin_bottom = 368.0
+
 [node name="space" type="Label" parent="set/SettingScroll/SettingGrid"]
-margin_top = 361.0
-margin_right = 99.0
-margin_bottom = 375.0
+margin_top = 369.0
+margin_right = 108.0
+margin_bottom = 383.0
 text = "    "
 
 [node name="SettEndGrid" type="GridContainer" parent="set"]
@@ -608,7 +614,7 @@ window_title = "Reset Settings?"
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/ColorGrid/b_ran_bg" to="set/SettingScroll/SettingGrid/ColorGrid" method="_on_b_ran_bg_pressed"]
 [connection signal="toggled" from="set/SettingScroll/SettingGrid/OtherGrid3/c_bind_col" to="set/SettingScroll/SettingGrid/ColorGrid" method="_on_c_bind_col_toggled"]
 [connection signal="value_changed" from="set/SettingScroll/SettingGrid/s_ui_scale" to="set/SettingScroll/SettingGrid" method="_on_s_ui_scale_value_changed"]
-[connection signal="pressed" from="set/SettingScroll/SettingGrid/ffmpeg_container2/ffmpeg_select" to="set/SelectLocation" method="_on_ffmpeg_select_pressed"]
+[connection signal="pressed" from="set/SettingScroll/SettingGrid/ffmpeg_container3/ffmpeg_select" to="set/SelectLocation" method="_on_ffmpeg_select_pressed"]
 [connection signal="pressed" from="set/SettEndGrid/SettingSave" to="set/SettingScroll/SettingGrid" method="_on_SettingSave_pressed"]
 [connection signal="pressed" from="set/SettEndGrid/SettingDiscard" to="set/SettEndGrid/SettingDiscard" method="_on_SettingDiscard_pressed"]
 [connection signal="confirmed" from="set/SettEndGrid/SettingDiscard/DiscardConf" to="set/SettEndGrid/SettingDiscard" method="_on_DiscardConf_confirmed"]
