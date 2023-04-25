@@ -572,6 +572,12 @@ text = "Choose if you want to make copies or to replace old audio files
 "
 align = 1
 
+[node name="ffmpeg_error_popup" type="AcceptDialog" parent="set/SettingScroll/SettingGrid/ffmpeg_container2"]
+margin_right = 40.0
+margin_bottom = 40.0
+window_title = "Error!"
+dialog_text = "Cannot find FFmpeg executable!!!"
+
 [node name="space" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 375.0
 margin_right = 108.0
