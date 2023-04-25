@@ -561,13 +561,15 @@ text = "Convert All Audio Files"
 
 [node name="convert_popup" type="AcceptDialog" parent="set/SettingScroll/SettingGrid/ffmpeg_container2/b_ffmpeg_convert"]
 window_title = "Convert All Audio Files"
-dialog_text = "Convert all Opus audio files to Vorbis format so that they work with the app?"
+dialog_text = "Convert all Opus audio files to Vorbis format so that they work with the app"
 
 [node name="l_convert" type="Label" parent="set/SettingScroll/SettingGrid/ffmpeg_container2/b_ffmpeg_convert/convert_popup"]
 margin_left = 8.0
 margin_top = 22.0
 margin_right = 486.0
 margin_bottom = 36.0
+text = "Choose if you want to make copies or to replace old audio files
+"
 align = 1
 
 [node name="space" type="Label" parent="set/SettingScroll/SettingGrid"]
@@ -648,6 +650,7 @@ window_title = "Reset Settings?"
 [connection signal="value_changed" from="set/SettingScroll/SettingGrid/s_ui_scale" to="set/SettingScroll/SettingGrid" method="_on_s_ui_scale_value_changed"]
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/ffmpeg_container3/ffmpeg_select" to="set/SelectLocation" method="_on_ffmpeg_select_pressed"]
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/ffmpeg_container2/b_ffmpeg_convert" to="set/SettingScroll/SettingGrid/ffmpeg_container2" method="_on_b_ffmpeg_convert_pressed"]
+[connection signal="custom_action" from="set/SettingScroll/SettingGrid/ffmpeg_container2/b_ffmpeg_convert/convert_popup" to="set/SettingScroll/SettingGrid/ffmpeg_container2" method="_on_convert_popup_custom_action"]
 [connection signal="pressed" from="set/SettEndGrid/SettingSave" to="set/SettingScroll/SettingGrid" method="_on_SettingSave_pressed"]
 [connection signal="pressed" from="set/SettEndGrid/SettingDiscard" to="set/SettEndGrid/SettingDiscard" method="_on_SettingDiscard_pressed"]
 [connection signal="confirmed" from="set/SettEndGrid/SettingDiscard/DiscardConf" to="set/SettEndGrid/SettingDiscard" method="_on_DiscardConf_confirmed"]
