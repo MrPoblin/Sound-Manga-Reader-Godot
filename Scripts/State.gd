@@ -49,10 +49,6 @@ func to_vorbis(path) -> void:
 
 func to_vorbis_replace(path) -> void:
 	to_vorbis(path)
-	match osType:
-		SYSTEM.WINDOWS:
-			pass
-#			OS.execute("CMD.exe", ["/C", "del", path + ".ogg"])
-#			OS.execute("CMD.exe", ["/C", "ren", path + "_vorbis.ogg", path + ".ogg"])
-		SYSTEM.UNIX:
-			pass
+	var dir: Directory = Directory.new()
+	OS.move_to_trash(path + ".ogg")
+	dir.rename(path + "_vorbis.ogg", path + ".ogg")
