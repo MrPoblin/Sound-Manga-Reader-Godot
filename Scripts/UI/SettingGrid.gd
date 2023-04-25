@@ -138,3 +138,4 @@ func _on_Settings_resized():
 
 func _on_SettingGrid_visibility_changed():
 	$"%le_ffmpeg".text = Config.config.get_value("storage", "ffmpeg", "")
+

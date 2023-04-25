@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scripts/UI/op_ffmpeg.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/UI/ffmpeg_container2.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/UI/SettingGrid.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/UI/SelectLocation.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/UI/C_Panel.tscn" type="PackedScene" id=5]
@@ -539,12 +539,36 @@ margin_left = 128.0
 margin_top = 354.0
 margin_right = 1223.0
 margin_bottom = 374.0
+script = ExtResource( 1 )
 
 [node name="op_ffmpeg" type="OptionButton" parent="set/SettingScroll/SettingGrid/ffmpeg_container2"]
 margin_right = 29.0
 margin_bottom = 20.0
 mouse_default_cursor_shape = 2
-script = ExtResource( 1 )
+
+[node name="sep" type="VSeparator" parent="set/SettingScroll/SettingGrid/ffmpeg_container2"]
+margin_left = 33.0
+margin_right = 37.0
+margin_bottom = 20.0
+
+[node name="b_ffmpeg_convert" type="Button" parent="set/SettingScroll/SettingGrid/ffmpeg_container2"]
+margin_left = 41.0
+margin_right = 198.0
+margin_bottom = 20.0
+hint_tooltip = "Convert all Opus audio files into Vorbis"
+mouse_default_cursor_shape = 2
+text = "Convert All Audio Files"
+
+[node name="convert_popup" type="AcceptDialog" parent="set/SettingScroll/SettingGrid/ffmpeg_container2/b_ffmpeg_convert"]
+window_title = "Convert All Audio Files"
+dialog_text = "Convert all Opus audio files to Vorbis format so that they work with the app?"
+
+[node name="l_convert" type="Label" parent="set/SettingScroll/SettingGrid/ffmpeg_container2/b_ffmpeg_convert/convert_popup"]
+margin_left = 8.0
+margin_top = 22.0
+margin_right = 486.0
+margin_bottom = 36.0
+align = 1
 
 [node name="space" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 375.0
@@ -623,6 +647,7 @@ window_title = "Reset Settings?"
 [connection signal="toggled" from="set/SettingScroll/SettingGrid/OtherGrid3/c_bind_col" to="set/SettingScroll/SettingGrid/ColorGrid" method="_on_c_bind_col_toggled"]
 [connection signal="value_changed" from="set/SettingScroll/SettingGrid/s_ui_scale" to="set/SettingScroll/SettingGrid" method="_on_s_ui_scale_value_changed"]
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/ffmpeg_container3/ffmpeg_select" to="set/SelectLocation" method="_on_ffmpeg_select_pressed"]
+[connection signal="pressed" from="set/SettingScroll/SettingGrid/ffmpeg_container2/b_ffmpeg_convert" to="set/SettingScroll/SettingGrid/ffmpeg_container2" method="_on_b_ffmpeg_convert_pressed"]
 [connection signal="pressed" from="set/SettEndGrid/SettingSave" to="set/SettingScroll/SettingGrid" method="_on_SettingSave_pressed"]
 [connection signal="pressed" from="set/SettEndGrid/SettingDiscard" to="set/SettEndGrid/SettingDiscard" method="_on_SettingDiscard_pressed"]
 [connection signal="confirmed" from="set/SettEndGrid/SettingDiscard/DiscardConf" to="set/SettEndGrid/SettingDiscard" method="_on_DiscardConf_confirmed"]
