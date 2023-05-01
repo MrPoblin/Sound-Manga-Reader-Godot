@@ -1,5 +1,6 @@
 extends HBoxContainer
  
+var ffmpeg_main := Thread.new()
 
 func _ready():
 	$op_ffmpeg.add_item ( "Disabled", 0 )
@@ -8,6 +9,7 @@ func _ready():
 	$b_ffmpeg_convert/convert_popup.get_ok().visible = false
 	$b_ffmpeg_convert/convert_popup.add_button("Replace", true, "replace")
 	$b_ffmpeg_convert/convert_popup.add_button("Copy", false, "copy")
+
 
 func _on_b_ffmpeg_convert_pressed() -> void:
 	$b_ffmpeg_convert/convert_popup.popup_centered()
@@ -24,9 +26,27 @@ func _on_convert_popup_custom_action(action) -> void:
 	else: 
 		$ffmpeg_error_popup.popup_centered()
 		return
+#	var folderArray: Array
+#	var dir := Directory.new()
 	
+	ffmpeg_main.start(self, "conversion_process", action)
+	$conversion_progress.popup_centered()
+	
+#	ffmpeg_main.wait_to_finish()
+#	conversion_process(action)
+#	ffmpeg_main.wait_to_finish()
 	match action:
 		"copy":
 			pass
 		"replace":
 			pass
+
+func conversion_process(action) -> void:
+	
+	State.to_vorbis("B:/Games/com.soundmangareader/pack/umineko-sound/bgm/013")
+
+
+func _on_conversion_progress_about_to_show():
+	while(ffmpeg_main.is_active() && ffmpeg_main.is_alive()):
+		pass
+	ffmpeg_main.wait_to_finish()

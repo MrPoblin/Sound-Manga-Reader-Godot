@@ -552,6 +552,7 @@ margin_right = 37.0
 margin_bottom = 20.0
 
 [node name="b_ffmpeg_convert" type="Button" parent="set/SettingScroll/SettingGrid/ffmpeg_container2"]
+visible = false
 margin_left = 41.0
 margin_right = 198.0
 margin_bottom = 20.0
@@ -566,8 +567,8 @@ dialog_text = "Convert all Opus audio files to Vorbis format so that they work w
 [node name="l_convert" type="Label" parent="set/SettingScroll/SettingGrid/ffmpeg_container2/b_ffmpeg_convert/convert_popup"]
 margin_left = 8.0
 margin_top = 22.0
-margin_right = 486.0
-margin_bottom = 36.0
+margin_right = 488.0
+margin_bottom = 53.0
 text = "Choose if you want to make copies or to replace old audio files
 "
 align = 1
@@ -577,6 +578,24 @@ margin_right = 40.0
 margin_bottom = 40.0
 window_title = "Error!"
 dialog_text = "Cannot find FFmpeg executable!!!"
+
+[node name="conversion_progress" type="Popup" parent="set/SettingScroll/SettingGrid/ffmpeg_container2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+popup_exclusive = true
+
+[node name="Panel" type="Panel" parent="set/SettingScroll/SettingGrid/ffmpeg_container2/conversion_progress"]
+anchor_left = 0.4
+anchor_top = 0.4
+anchor_right = 0.6
+anchor_bottom = 0.6
+
+[node name="Label" type="Label" parent="set/SettingScroll/SettingGrid/ffmpeg_container2/conversion_progress/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 127.0
+text = "hgfdhghfdghfdgfdhgfdhgdfhhdgfdhfgfhdgfghdfghddhfghhgffghdfhgd"
+autowrap = true
 
 [node name="space" type="Label" parent="set/SettingScroll/SettingGrid"]
 margin_top = 375.0
@@ -657,6 +676,7 @@ window_title = "Reset Settings?"
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/ffmpeg_container3/ffmpeg_select" to="set/SelectLocation" method="_on_ffmpeg_select_pressed"]
 [connection signal="pressed" from="set/SettingScroll/SettingGrid/ffmpeg_container2/b_ffmpeg_convert" to="set/SettingScroll/SettingGrid/ffmpeg_container2" method="_on_b_ffmpeg_convert_pressed"]
 [connection signal="custom_action" from="set/SettingScroll/SettingGrid/ffmpeg_container2/b_ffmpeg_convert/convert_popup" to="set/SettingScroll/SettingGrid/ffmpeg_container2" method="_on_convert_popup_custom_action"]
+[connection signal="about_to_show" from="set/SettingScroll/SettingGrid/ffmpeg_container2/conversion_progress" to="set/SettingScroll/SettingGrid/ffmpeg_container2" method="_on_conversion_progress_about_to_show"]
 [connection signal="pressed" from="set/SettEndGrid/SettingSave" to="set/SettingScroll/SettingGrid" method="_on_SettingSave_pressed"]
 [connection signal="pressed" from="set/SettEndGrid/SettingDiscard" to="set/SettEndGrid/SettingDiscard" method="_on_SettingDiscard_pressed"]
 [connection signal="confirmed" from="set/SettEndGrid/SettingDiscard/DiscardConf" to="set/SettEndGrid/SettingDiscard" method="_on_DiscardConf_confirmed"]
