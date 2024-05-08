@@ -1,7 +1,7 @@
 # Sound Manga Reader Godot
 [![Total Download Count](https://img.shields.io/github/downloads/MrPoblin/Sound-Manga-Reader-Godot/total)](https://github.com/MrPoblin/Sound-Manga-Reader-Godot/releases/latest)
 [![Repo Size](https://img.shields.io/github/repo-size/MrPoblin/Sound-Manga-Reader-Godot)](https://github.com/MrPoblin/Sound-Manga-Reader-Godot)
-[![Discord](https://dcbadge.vercel.app/api/server/8TBW6zHMWJ?style=flat)](https://discord.gg/8TBW6zHMWJ)
+[![Discord](https://dcbadge.limes.pink/api/server/8TBW6zHMWJ?style=flat)](https://discord.gg/8TBW6zHMWJ)
 [![Repo Stars](https://img.shields.io/github/stars/MrPoblin/Sound-Manga-Reader-Godot?style=social)](https://github.com/MrPoblin/Sound-Manga-Reader-Godot)
 
 
